@@ -106,4 +106,21 @@ public final class StringListUtils {
 		return list;
 	}
 
+	/**
+	 * Goes through a List and replaces the & symbol with the {@link org.bukkit.ChatColor} symbol while replacing two
+	 * ChatColor symbols with an &.
+	 * @param strings List of Strings
+	 * @return colored List
+	 */
+	public static List<String> colorList(List<String> strings, char symbol) {
+		Validate.notNull(strings);
+
+		List<String> list = new ArrayList<>();
+		for (String s : strings) {
+			list.add(s.replace(symbol, '\u00A7').replace("\u00A7\u00A7", String.valueOf(symbol)));
+		}
+
+		return list;
+	}
+
 }

@@ -1,5 +1,6 @@
 package net.nunnerycode.bukkit.libraries.ivory;
 
+import org.bukkit.ChatColor;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -219,6 +220,24 @@ public class StringListUtilsTest {
 
 		List<String> actual = StringListUtils.removeIfMatches(list, toRemove);
 		List<String> expected = Arrays.asList("Polly wants a", "cracker because Polly", "crackers another word");
+
+		Assert.assertNotNull(actual);
+		Assert.assertNotNull(expected);
+
+		Assert.assertEquals(actual, expected);
+	}
+
+	@Test
+	public void testColorListOne() throws Exception {
+		List<String> list = Arrays.asList("&4Test list", "&7Please &8ig&4nore");
+		char symbol = '&';
+
+		Assert.assertNotNull(list);
+		Assert.assertNotNull(symbol);
+
+		List<String> actual = StringListUtils.colorList(list, symbol);
+		List<String> expected = Arrays.asList(ChatColor.DARK_RED + "Test list", ChatColor.GRAY + "Please " + ChatColor
+				.DARK_GRAY + "ig" + ChatColor.DARK_RED + "nore");
 
 		Assert.assertNotNull(actual);
 		Assert.assertNotNull(expected);
