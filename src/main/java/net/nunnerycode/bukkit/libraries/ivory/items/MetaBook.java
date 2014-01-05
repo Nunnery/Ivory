@@ -1,5 +1,6 @@
-package net.nunnerycode.bukkit.libraries.ivory;
+package net.nunnerycode.bukkit.libraries.ivory.items;
 
+import net.nunnerycode.bukkit.libraries.ivory.utils.StringListUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.inventory.meta.BookMeta;

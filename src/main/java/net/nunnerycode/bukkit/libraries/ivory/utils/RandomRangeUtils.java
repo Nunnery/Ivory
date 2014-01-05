@@ -1,4 +1,4 @@
-package net.nunnerycode.bukkit.libraries.ivory;
+package net.nunnerycode.bukkit.libraries.ivory.utils;
 
 import org.apache.commons.lang.math.DoubleRange;
 import org.apache.commons.lang.math.LongRange;

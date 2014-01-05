@@ -1,4 +1,4 @@
-package net.nunnerycode.bukkit.libraries.ivory;
+package net.nunnerycode.bukkit.libraries.ivory.utils;
 
 import org.bukkit.ChatColor;
 import org.junit.Assert;
