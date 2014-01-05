@@ -1,13 +1,13 @@
 package net.nunnerycode.bukkit.libraries.ivory;
 
-import org.apache.commons.lang.Validate;
+import org.apache.commons.lang3.Validate;
 
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
 /**
- * A class designed to handle maniuplation of {@link java.util.List}s of {@link java.lang.String}s.
+ * A class designed to handle manipulation of {@link java.util.List}s of {@link java.lang.String}s.
  */
 public final class StringListUtils {
 
