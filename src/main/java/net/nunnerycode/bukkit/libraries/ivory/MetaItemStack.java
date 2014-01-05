@@ -91,7 +91,7 @@ public class MetaItemStack extends ItemStack {
 		if (itemMeta == null) {
 			return;
 		}
-		itemMeta.setLore(lore != null ? StringListUtils.colorList(lore) : null);
+		itemMeta.setLore(lore != null ? StringListUtils.colorList(lore, '&') : null);
 		setItemMeta(itemMeta);
 	}
 
@@ -132,7 +132,7 @@ public class MetaItemStack extends ItemStack {
 			return;
 		}
 		itemMeta.setDisplayName(name != null ? name.replace('&', '\u00A7').replace("\u00A7\u00A7", "&") : null);
-		itemMeta.setLore(lore != null ? StringListUtils.colorList(lore) : null);
+		itemMeta.setLore(lore != null ? StringListUtils.colorList(lore, '&') : null);
 		setItemMeta(itemMeta);
 	}
 
@@ -176,7 +176,7 @@ public class MetaItemStack extends ItemStack {
 		if (itemMeta == null) {
 			return;
 		}
-		itemMeta.setLore(lore != null ? StringListUtils.colorList(lore) : null);
+		itemMeta.setLore(lore != null ? StringListUtils.colorList(lore, '&') : null);
 		for (Map.Entry<Enchantment, Integer> entry : enchantments.entrySet()) {
 			itemMeta.addEnchant(entry.getKey(), entry.getValue(), true);
 		}
@@ -202,7 +202,7 @@ public class MetaItemStack extends ItemStack {
 			return;
 		}
 		itemMeta.setDisplayName(name != null ? name.replace('&', '\u00A7').replace("\u00A7\u00A7", "&") : null);
-		itemMeta.setLore(lore != null ? StringListUtils.colorList(lore) : null);
+		itemMeta.setLore(lore != null ? StringListUtils.colorList(lore, '&') : null);
 		for (Map.Entry<Enchantment, Integer> entry : enchantments.entrySet()) {
 			itemMeta.addEnchant(entry.getKey(), entry.getValue(), true);
 		}
