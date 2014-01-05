@@ -48,8 +48,7 @@ public final class RandomRangeUtils {
 	public static long randomLongFromLongRangeExclusive(LongRange rangeContainer) {
 		long min = rangeContainer.getMinimumLong();
 		long max = rangeContainer.getMaximumLong();
-		long value = min + (long) (RandomUtils.nextDouble() * (rangeContainer.getMaximumLong() - rangeContainer
-				.getMinimumLong()));
+		long value = min + (long) (RandomUtils.nextDouble() * (max - min));
 		return Math.min(Math.max(value, min), max - 1);
 	}
 
@@ -62,8 +61,7 @@ public final class RandomRangeUtils {
 	public static long randomLongFromLongRangeInclusive(LongRange rangeContainer) {
 		long min = rangeContainer.getMinimumLong();
 		long max = rangeContainer.getMaximumLong();
-		long value = min + (long) (RandomUtils.nextDouble() * (rangeContainer.getMaximumLong() - rangeContainer
-				.getMinimumLong()) + 1);
+		long value = min + (long) (RandomUtils.nextDouble() * (max - min) + 1);
 		return Math.min(Math.max(value, min), max);
 	}
 
@@ -104,8 +102,7 @@ public final class RandomRangeUtils {
 	public static double randomDoubleFromDoubleRangeExclusive(DoubleRange rangeContainer) {
 		double min = rangeContainer.getMinimumDouble();
 		double max = rangeContainer.getMaximumDouble();
-		double value = min + RandomUtils.nextDouble() * (rangeContainer.getMaximumLong() - rangeContainer
-				.getMinimumLong());
+		double value = min + RandomUtils.nextDouble() * (max - min);
 		return Math.min(Math.max(value, min), max - 1);
 	}
 
@@ -118,8 +115,7 @@ public final class RandomRangeUtils {
 	public static double randomDoubleFromDoubleRangeInclusive(DoubleRange rangeContainer) {
 		double min = rangeContainer.getMinimumDouble();
 		double max = rangeContainer.getMaximumDouble();
-		double value = min + RandomUtils.nextDouble() * (rangeContainer.getMaximumLong() - rangeContainer
-				.getMinimumLong() + 1.0);
+		double value = min + RandomUtils.nextDouble() * (max - min + 1.0);
 		return Math.min(Math.max(value, min), max);
 	}
 }
