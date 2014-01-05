@@ -1,13 +1,12 @@
 package net.nunnerycode.bukkit.libraries.ivory;
 
-
 import org.apache.commons.lang.math.DoubleRange;
 import org.apache.commons.lang.math.LongRange;
 import org.apache.commons.lang.math.RandomUtils;
 
 public final class RandomRangeUtils {
 
-	private RandomRangeUtils(){
+	private RandomRangeUtils() {
 		// do nothing
 	}
 
