@@ -140,14 +140,12 @@
                             <goal>shade</goal>
                         </goals>
                         <configuration>
-                            <minimizeJar>true</minimizeJar>
                             <artifactSet>
                                 <includes>
-                                    <include>net.nunnerycode.java.libraries:Cannonball</include>
-                                    <include>net.nunnerycode.bukkit:ExtendibleBukkitConfig</include>
                                     <include>se.ranzdo.bukkit:methodcommand</include>
-                                    <include>org.mcstats.bukkit:metrics</include>
                                     <include>org.apache.commons:commons-lang3</include>
+                                    <include>mkremins:fanciful</include>
+                                    <include>org.json:json</include>
                                 </includes>
                             </artifactSet>
                         </configuration>
@@ -190,6 +188,10 @@
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>mkremins</groupId>
+            <artifactId>fanciful</artifactId>
         </dependency>
     </dependencies>
 
