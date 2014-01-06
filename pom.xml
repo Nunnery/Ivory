@@ -18,6 +18,7 @@
 
     <modules>
         <module>ivory-standalone</module>
+        <module>ivory-plugin</module>
     </modules>
 
     <developers>
