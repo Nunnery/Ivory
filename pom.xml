@@ -115,8 +115,8 @@
         <dependencies>
             <dependency>
                 <groupId>org.bukkit</groupId>
-                <artifactId>bukkit</artifactId>
-                <version>LATEST</version>
+                <artifactId>craftbukkit</artifactId>
+                <version>1.7.2-R0.2</version>
                 <type>jar</type>
                 <scope>compile</scope>
             </dependency>
@@ -131,13 +131,6 @@
                 <groupId>org.apache.commons</groupId>
                 <artifactId>commons-lang3</artifactId>
                 <version>3.2</version>
-                <type>jar</type>
-                <scope>compile</scope>
-            </dependency>
-            <dependency>
-                <groupId>mkremins</groupId>
-                <artifactId>fanciful</artifactId>
-                <version>0.1.1</version>
                 <type>jar</type>
                 <scope>compile</scope>
             </dependency>
