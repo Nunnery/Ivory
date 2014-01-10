@@ -16,7 +16,7 @@ public final class FancyMessage {
 	private final List<MessagePart> messageParts;
 
 	public FancyMessage(final String firstPartText) {
-		messageParts = new ArrayList<MessagePart>();
+		messageParts = new ArrayList<>();
 		messageParts.add(new MessagePart(firstPartText));
 	}
 
