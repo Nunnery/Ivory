@@ -57,7 +57,7 @@ public class IvoryPlugin extends JavaPlugin {
 				lore = itemStack.getItemMeta().getLore();
 			}
 			String tooltip = JSONUtils.toJSON(itemStack.getData().getItemTypeId(), itemStack.getData().getData(),
-					displayName, lore);
+					displayName, lore, itemStack.getEnchantments());
 
 			message = message.replace(inHandReplace, tooltip);
 			event.setMessage(message);
@@ -95,7 +95,7 @@ public class IvoryPlugin extends JavaPlugin {
 				lore = itemStack.getItemMeta().getLore();
 			}
 			String tooltip = JSONUtils.toJSON(itemStack.getData().getItemTypeId(), itemStack.getData().getData(),
-					displayName, lore);
+					displayName, lore, itemStack.getEnchantments());
 			Bukkit.getLogger().info(tooltip);
 			new FancyMessage(player.getName()).color(ChatColor.GREEN).then(" has a ").color(ChatColor.BLUE).then
 					(displayName).itemTooltip(tooltip).send(player);
