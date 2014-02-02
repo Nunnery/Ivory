@@ -120,7 +120,7 @@
                 <version>2.1</version>
                 <executions>
                     <execution>
-                        <phase>prepare-package</phase>
+                        <phase>package</phase>
                         <goals>
                             <goal>shade</goal>
                         </goals>
