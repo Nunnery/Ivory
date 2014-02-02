@@ -114,11 +114,6 @@
             <name>Bukkit Repository</name>
             <url>http://repo.bukkit.org/content/groups/public/</url>
         </repository>
-        <repository>
-            <id>convent-repo</id>
-            <name>ConventNunnery Repository</name>
-            <url>http://repository-topplethenun.forge.cloudbees.com/snapshot/</url>
-        </repository>
     </repositories>
 
     <properties>
