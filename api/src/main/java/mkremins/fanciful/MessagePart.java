@@ -12,11 +12,11 @@ public final class MessagePart {
       hoverActionName = null, hoverActionData = null;
   final String text;
 
-  MessagePart(final String text) {
+  public MessagePart(final String text) {
     this.text = text;
   }
 
-  JSONWriter writeJson(final JSONWriter json) throws JSONException {
+  public JSONWriter writeJson(final JSONWriter json) throws JSONException {
     json.object().key("text").value(text);
     if (color != null) {
       json.key("color").value(color.name().toLowerCase());
