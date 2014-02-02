@@ -1,7 +1,5 @@
 package net.nunnerycode.bukkit.libraries.ivory.utils;
 
-import org.apache.commons.lang3.Validate;
-
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -28,8 +26,12 @@ public final class StringListUtils {
    */
   public static List<String> addString(List<String> strings, int index, String string,
                                        boolean startAtZero) {
-    Validate.notNull(strings, "List<String> cannot be null");
-    Validate.notNull(string, "String cannot be null");
+    if (strings == null) {
+      throw new IllegalArgumentException("List<String> cannot be null");
+    }
+    if (string == null) {
+      throw new IllegalArgumentException("String cannot be null");
+    }
 
     List<String> list = new ArrayList<>(strings);
 
@@ -57,8 +59,12 @@ public final class StringListUtils {
    * @return List without String
    */
   public static List<String> removeAll(List<String> strings, String string) {
-    Validate.notNull(strings);
-    Validate.notNull(string);
+    if (strings == null) {
+      throw new IllegalArgumentException("List<String> cannot be null");
+    }
+    if (string == null) {
+      throw new IllegalArgumentException("String cannot be null");
+    }
 
     List<String> list = new ArrayList<>(strings);
 
@@ -81,8 +87,9 @@ public final class StringListUtils {
    * @return List without matched Strings
    */
   public static List<String> removeIfMatches(List<String> strings, List<String> otherStrings) {
-    Validate.notNull(strings);
-    Validate.notNull(otherStrings);
+    if (strings == null || otherStrings == null) {
+      throw new IllegalArgumentException("List<String> cannot be null");
+    }
 
     List<String> list = new ArrayList<>(strings);
 
@@ -117,7 +124,9 @@ public final class StringListUtils {
    * @return colored List
    */
   public static List<String> colorList(List<String> strings, char symbol) {
-    Validate.notNull(strings);
+    if (strings == null) {
+      throw new IllegalArgumentException("List<String> cannot be null");
+    }
 
     List<String> list = new ArrayList<>();
     for (String s : strings) {
