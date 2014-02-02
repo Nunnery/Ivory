@@ -17,8 +17,9 @@
     </prerequisites>
 
     <modules>
-        <module>ivory-standalone</module>
-        <module>ivory-plugin</module>
+        <module>api</module>
+        <module>lib</module>
+        <module>v1_4_5</module>
     </modules>
 
     <developers>
@@ -110,37 +111,6 @@
             <url>http://repository-topplethenun.forge.cloudbees.com/snapshot/</url>
         </repository>
     </repositories>
-
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>org.bukkit</groupId>
-                <artifactId>craftbukkit</artifactId>
-                <version>1.7.2-R0.2</version>
-                <type>jar</type>
-                <scope>compile</scope>
-            </dependency>
-            <dependency>
-                <groupId>se.ranzdo.bukkit</groupId>
-                <artifactId>methodcommand</artifactId>
-                <version>0.2-SNAPSHOT</version>
-                <type>jar</type>
-                <scope>compile</scope>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.commons</groupId>
-                <artifactId>commons-lang3</artifactId>
-                <version>3.2</version>
-                <type>jar</type>
-                <scope>compile</scope>
-            </dependency>
-            <dependency>
-                <groupId>junit</groupId>
-                <artifactId>junit</artifactId>
-                <version>4.11</version>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
