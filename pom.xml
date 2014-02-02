@@ -20,6 +20,7 @@
         <module>api</module>
         <module>lib</module>
         <module>v1_4_5</module>
+        <module>v1_4_6</module>
     </modules>
 
     <developers>
