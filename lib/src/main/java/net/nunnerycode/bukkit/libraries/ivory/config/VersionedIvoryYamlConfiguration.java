@@ -71,7 +71,7 @@ public class VersionedIvoryYamlConfiguration extends IvoryYamlConfiguration {
    * @return if file needs to update
    */
   public boolean needsToUpdate() {
-    return !(getVersion() == null && getLocalVersion() == null) && getVersion()
+    return !(getVersion() == null && getLocalVersion() == null) && !getVersion()
         .equals(getLocalVersion());
   }
 
@@ -88,14 +88,18 @@ public class VersionedIvoryYamlConfiguration extends IvoryYamlConfiguration {
     switch (updateType) {
       case BACKUP_NO_UPDATE:
         try {
-          save(saveTo);
+          if (getFile().exists()) {
+            save(saveTo);
+          }
         } catch (IOException e) {
           return false;
         }
         return true;
       case BACKUP_AND_UPDATE:
         try {
-          save(saveTo);
+          if (getFile().exists()) {
+            save(saveTo);
+          }
         } catch (IOException e) {
           return false;
         }
