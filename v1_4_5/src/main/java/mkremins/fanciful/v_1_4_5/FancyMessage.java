@@ -1,4 +1,4 @@
-package mkremins.fanciful;
+package mkremins.fanciful.v_1_4_5;
 
 import net.minecraft.server.v1_4_5.NBTTagCompound;
 
@@ -11,6 +11,8 @@ import org.json.JSONStringer;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import mkremins.fanciful.IFancyMessage;
 
 public class FancyMessage implements IFancyMessage {
 
