@@ -1,8 +1,11 @@
 package mkremins.fanciful.v_1_7_R1;
 
+import net.minecraft.server.v1_7_R1.ChatSerializer;
 import net.minecraft.server.v1_7_R1.NBTTagCompound;
+import net.minecraft.server.v1_7_R1.PacketPlayOutChat;
 
 import org.bukkit.ChatColor;
+import org.bukkit.craftbukkit.v1_7_R1.entity.CraftPlayer;
 import org.bukkit.craftbukkit.v1_7_R1.inventory.CraftItemStack;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
@@ -117,7 +120,8 @@ public final class FancyMessage implements IFancyMessage {
 
   @Override
   public void send(Player player) {
-    // do nothing
+    ((CraftPlayer) player).getHandle().playerConnection.sendPacket(new PacketPlayOutChat(
+        ChatSerializer.a(toJSONString())));
   }
 
   private MessagePart latest() {
