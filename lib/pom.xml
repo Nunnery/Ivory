@@ -101,6 +101,13 @@
             <type>jar</type>
             <optional>true</optional>
         </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.2</version>
+            <type>jar</type>
+            <scope>compile</scope>
+        </dependency>
     </dependencies>
 
     <build>
@@ -128,6 +135,7 @@
                             <artifactSet>
                                 <includes>
                                     <include>net.nunnerycode.bukkit:ivory-*</include>
+                                    <include>org.apache.commons:commons-lang3</include>
                                 </includes>
                                 <excludes>
                                     <excludes>net.nunnerycode.bukkit:ivory-standalone</excludes>
