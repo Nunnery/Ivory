@@ -4,7 +4,7 @@ import org.bukkit.ChatColor;
 import org.json.JSONException;
 import org.json.JSONWriter;
 
-final class MessagePart {
+public final class MessagePart {
 
   ChatColor color = null;
   ChatColor[] styles = null;
