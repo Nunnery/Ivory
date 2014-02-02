@@ -3,3 +3,5 @@ Ivory is licensed under the MIT License. You may modify, use, and distribute any
 or ToppleTheNun.
 
 Ivory contains modified code from mkremins' Fanciful library for Bukkit.
+
+Ivory is formatted after desht's dhutils project.
