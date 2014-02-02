@@ -14,7 +14,7 @@ import java.util.List;
 
 import mkremins.fanciful.IFancyMessage;
 
-public class FancyMessage implements IFancyMessage {
+public final class FancyMessage implements IFancyMessage {
 
   private final List<MessagePart> messageParts;
 
@@ -24,7 +24,7 @@ public class FancyMessage implements IFancyMessage {
   }
 
   @Override
-  public FancyMessage color(final ChatColor color) {
+  public IFancyMessage color(final ChatColor color) {
     if (!color.isColor()) {
       throw new IllegalArgumentException(color.name() + " is not a color");
     }
@@ -33,7 +33,7 @@ public class FancyMessage implements IFancyMessage {
   }
 
   @Override
-  public FancyMessage style(final ChatColor... styles) {
+  public IFancyMessage style(final ChatColor... styles) {
     for (final ChatColor style : styles) {
       if (!style.isFormat()) {
         throw new IllegalArgumentException(style.name() + " is not a style");
@@ -44,54 +44,54 @@ public class FancyMessage implements IFancyMessage {
   }
 
   @Override
-  public FancyMessage file(final String path) {
+  public IFancyMessage file(final String path) {
     onClick("open_file", path);
     return this;
   }
 
   @Override
-  public FancyMessage link(final String url) {
+  public IFancyMessage link(final String url) {
     onClick("open_url", url);
     return this;
   }
 
   @Override
-  public FancyMessage suggest(final String command) {
+  public IFancyMessage suggest(final String command) {
     onClick("suggest_command", command);
     return this;
   }
 
   @Override
-  public FancyMessage command(final String command) {
+  public IFancyMessage command(final String command) {
     onClick("run_command", command);
     return this;
   }
 
   @Override
-  public FancyMessage achievementTooltip(final String name) {
+  public IFancyMessage achievementTooltip(final String name) {
     onHover("show_achievement", "achievement." + name);
     return this;
   }
 
   @Override
-  public FancyMessage itemTooltip(final String itemJSON) {
+  public IFancyMessage itemTooltip(final String itemJSON) {
     onHover("show_item", itemJSON);
     return this;
   }
 
   @Override
-  public FancyMessage itemTooltip(final ItemStack itemStack) {
+  public IFancyMessage itemTooltip(final ItemStack itemStack) {
     return itemTooltip(CraftItemStack.asNMSCopy(itemStack).save(new NBTTagCompound()).toString());
   }
 
   @Override
-  public FancyMessage tooltip(final String text) {
+  public IFancyMessage tooltip(final String text) {
     onHover("show_text", text);
     return this;
   }
 
   @Override
-  public FancyMessage then(final Object obj) {
+  public IFancyMessage then(final Object obj) {
     messageParts.add(new MessagePart(obj.toString()));
     return this;
   }
