@@ -9,240 +9,244 @@ import java.util.List;
 
 public class StringListUtilsTest {
 
-	@Test
-	public void testAddStringOne() throws Exception {
-		List<String> list = Arrays.asList("one", "two", "three", "four", "five");
-		String toAdd = "six";
-		int index = 5;
-		boolean startAtZero = true;
+  @Test
+  public void testAddStringOne() throws Exception {
+    List<String> list = Arrays.asList("one", "two", "three", "four", "five");
+    String toAdd = "six";
+    int index = 5;
+    boolean startAtZero = true;
 
-		Assert.assertNotNull(list);
-		Assert.assertNotNull(toAdd);
+    Assert.assertNotNull(list);
+    Assert.assertNotNull(toAdd);
 
-		List<String> actual = StringListUtils.addString(list, index, toAdd, startAtZero);
-		List<String> expected = Arrays.asList("one", "two", "three", "four", "five", "six");
+    List<String> actual = StringListUtils.addString(list, index, toAdd, startAtZero);
+    List<String> expected = Arrays.asList("one", "two", "three", "four", "five", "six");
 
-		Assert.assertNotNull(actual);
-		Assert.assertNotNull(expected);
+    Assert.assertNotNull(actual);
+    Assert.assertNotNull(expected);
 
-		Assert.assertEquals(actual, expected);
-	}
+    Assert.assertEquals(actual, expected);
+  }
 
-	@Test
-	public void testAddStringTwo() throws Exception {
-		List<String> list = Arrays.asList("one", "two", "three", "four", "five");
-		String toAdd = "six";
-		int index = 6;
-		boolean startAtZero = false;
+  @Test
+  public void testAddStringTwo() throws Exception {
+    List<String> list = Arrays.asList("one", "two", "three", "four", "five");
+    String toAdd = "six";
+    int index = 6;
+    boolean startAtZero = false;
 
-		Assert.assertNotNull(list);
-		Assert.assertNotNull(toAdd);
+    Assert.assertNotNull(list);
+    Assert.assertNotNull(toAdd);
 
-		List<String> actual = StringListUtils.addString(list, index, toAdd, startAtZero);
-		List<String> expected = Arrays.asList("one", "two", "three", "four", "five", "six");
+    List<String> actual = StringListUtils.addString(list, index, toAdd, startAtZero);
+    List<String> expected = Arrays.asList("one", "two", "three", "four", "five", "six");
 
-		Assert.assertNotNull(actual);
-		Assert.assertNotNull(expected);
+    Assert.assertNotNull(actual);
+    Assert.assertNotNull(expected);
 
-		Assert.assertEquals(actual, expected);
-	}
+    Assert.assertEquals(actual, expected);
+  }
 
-	@Test
-	public void testAddStringThree() throws Exception {
-		List<String> list = Arrays.asList("one", "two", "three", "four", "five");
-		String toAdd = "six";
-		int index = 4;
-		boolean startAtZero = true;
+  @Test
+  public void testAddStringThree() throws Exception {
+    List<String> list = Arrays.asList("one", "two", "three", "four", "five");
+    String toAdd = "six";
+    int index = 4;
+    boolean startAtZero = true;
 
-		Assert.assertNotNull(list);
-		Assert.assertNotNull(toAdd);
+    Assert.assertNotNull(list);
+    Assert.assertNotNull(toAdd);
 
-		List<String> actual = StringListUtils.addString(list, index, toAdd, startAtZero);
-		List<String> expected = Arrays.asList("one", "two", "three", "four", "six", "five");
+    List<String> actual = StringListUtils.addString(list, index, toAdd, startAtZero);
+    List<String> expected = Arrays.asList("one", "two", "three", "four", "six", "five");
 
-		Assert.assertNotNull(actual);
-		Assert.assertNotNull(expected);
+    Assert.assertNotNull(actual);
+    Assert.assertNotNull(expected);
 
-		Assert.assertEquals(actual, expected);
-	}
+    Assert.assertEquals(actual, expected);
+  }
 
-	@Test
-	public void testAddStringFour() throws Exception {
-		List<String> list = Arrays.asList("one", "two", "three", "four", "five");
-		String toAdd = "six";
-		int index = 5;
-		boolean startAtZero = false;
+  @Test
+  public void testAddStringFour() throws Exception {
+    List<String> list = Arrays.asList("one", "two", "three", "four", "five");
+    String toAdd = "six";
+    int index = 5;
+    boolean startAtZero = false;
 
-		Assert.assertNotNull(list);
-		Assert.assertNotNull(toAdd);
+    Assert.assertNotNull(list);
+    Assert.assertNotNull(toAdd);
 
-		List<String> actual = StringListUtils.addString(list, index, toAdd, startAtZero);
-		List<String> expected = Arrays.asList("one", "two", "three", "four", "six", "five");
+    List<String> actual = StringListUtils.addString(list, index, toAdd, startAtZero);
+    List<String> expected = Arrays.asList("one", "two", "three", "four", "six", "five");
 
-		Assert.assertNotNull(actual);
-		Assert.assertNotNull(expected);
+    Assert.assertNotNull(actual);
+    Assert.assertNotNull(expected);
 
-		Assert.assertEquals(actual, expected);
-	}
+    Assert.assertEquals(actual, expected);
+  }
 
-	@Test
-	public void testAddStringFive() throws Exception {
-		List<String> list = Arrays.asList("one", "two", "three", "four", "five");
-		String toAdd = "six";
-		int index = 8;
-		boolean startAtZero = true;
+  @Test
+  public void testAddStringFive() throws Exception {
+    List<String> list = Arrays.asList("one", "two", "three", "four", "five");
+    String toAdd = "six";
+    int index = 8;
+    boolean startAtZero = true;
 
-		Assert.assertNotNull(list);
-		Assert.assertNotNull(toAdd);
+    Assert.assertNotNull(list);
+    Assert.assertNotNull(toAdd);
 
-		List<String> actual = StringListUtils.addString(list, index, toAdd, startAtZero);
-		List<String> expected = Arrays.asList("one", "two", "three", "four", "five", "", "", "", "six");
+    List<String> actual = StringListUtils.addString(list, index, toAdd, startAtZero);
+    List<String> expected = Arrays.asList("one", "two", "three", "four", "five", "", "", "", "six");
 
-		Assert.assertNotNull(actual);
-		Assert.assertNotNull(expected);
+    Assert.assertNotNull(actual);
+    Assert.assertNotNull(expected);
 
-		Assert.assertEquals(actual, expected);
-	}
+    Assert.assertEquals(actual, expected);
+  }
 
-	@Test
-	public void testAddStringSix() throws Exception {
-		List<String> list = Arrays.asList("one", "two", "three", "four", "five");
-		String toAdd = "six";
-		int index = 9;
-		boolean startAtZero = false;
+  @Test
+  public void testAddStringSix() throws Exception {
+    List<String> list = Arrays.asList("one", "two", "three", "four", "five");
+    String toAdd = "six";
+    int index = 9;
+    boolean startAtZero = false;
 
-		Assert.assertNotNull(list);
-		Assert.assertNotNull(toAdd);
+    Assert.assertNotNull(list);
+    Assert.assertNotNull(toAdd);
 
-		List<String> actual = StringListUtils.addString(list, index, toAdd, startAtZero);
-		List<String> expected = Arrays.asList("one", "two", "three", "four", "five", "", "", "", "six");
+    List<String> actual = StringListUtils.addString(list, index, toAdd, startAtZero);
+    List<String> expected = Arrays.asList("one", "two", "three", "four", "five", "", "", "", "six");
 
-		Assert.assertNotNull(actual);
-		Assert.assertNotNull(expected);
+    Assert.assertNotNull(actual);
+    Assert.assertNotNull(expected);
 
-		Assert.assertEquals(actual, expected);
-	}
+    Assert.assertEquals(actual, expected);
+  }
 
-	@Test
-	public void testRemoveAllOne() throws Exception {
-		List<String> list = Arrays.asList("one", "two", "three", "four", "five");
-		String toRemove = "two";
+  @Test
+  public void testRemoveAllOne() throws Exception {
+    List<String> list = Arrays.asList("one", "two", "three", "four", "five");
+    String toRemove = "two";
 
-		Assert.assertNotNull(list);
-		Assert.assertNotNull(toRemove);
+    Assert.assertNotNull(list);
+    Assert.assertNotNull(toRemove);
 
-		List<String> actual = StringListUtils.removeAll(list, toRemove);
-		List<String> expected = Arrays.asList("one", "three", "four", "five");
+    List<String> actual = StringListUtils.removeAll(list, toRemove);
+    List<String> expected = Arrays.asList("one", "three", "four", "five");
 
-		Assert.assertNotNull(actual);
-		Assert.assertNotNull(expected);
+    Assert.assertNotNull(actual);
+    Assert.assertNotNull(expected);
 
-		Assert.assertEquals(actual, expected);
-	}
+    Assert.assertEquals(actual, expected);
+  }
 
-	@Test
-	public void testRemoveAllTwo() throws Exception {
-		List<String> list = Arrays.asList("one", "two", "two", "three", "four", "five");
-		String toRemove = "two";
+  @Test
+  public void testRemoveAllTwo() throws Exception {
+    List<String> list = Arrays.asList("one", "two", "two", "three", "four", "five");
+    String toRemove = "two";
 
-		Assert.assertNotNull(list);
-		Assert.assertNotNull(toRemove);
+    Assert.assertNotNull(list);
+    Assert.assertNotNull(toRemove);
 
-		List<String> actual = StringListUtils.removeAll(list, toRemove);
-		List<String> expected = Arrays.asList("one", "three", "four", "five");
+    List<String> actual = StringListUtils.removeAll(list, toRemove);
+    List<String> expected = Arrays.asList("one", "three", "four", "five");
 
-		Assert.assertNotNull(actual);
-		Assert.assertNotNull(expected);
+    Assert.assertNotNull(actual);
+    Assert.assertNotNull(expected);
 
-		Assert.assertEquals(actual, expected);
-	}
+    Assert.assertEquals(actual, expected);
+  }
 
-	@Test
-	public void testRemoveAllThree() throws Exception {
-		List<String> list = Arrays.asList("one", "two", "three", "two", "four", "two", "five", "two");
-		String toRemove = "two";
+  @Test
+  public void testRemoveAllThree() throws Exception {
+    List<String> list = Arrays.asList("one", "two", "three", "two", "four", "two", "five", "two");
+    String toRemove = "two";
 
-		Assert.assertNotNull(list);
-		Assert.assertNotNull(toRemove);
+    Assert.assertNotNull(list);
+    Assert.assertNotNull(toRemove);
 
-		List<String> actual = StringListUtils.removeAll(list, toRemove);
-		List<String> expected = Arrays.asList("one", "three", "four", "five");
+    List<String> actual = StringListUtils.removeAll(list, toRemove);
+    List<String> expected = Arrays.asList("one", "three", "four", "five");
 
-		Assert.assertNotNull(actual);
-		Assert.assertNotNull(expected);
+    Assert.assertNotNull(actual);
+    Assert.assertNotNull(expected);
 
-		Assert.assertEquals(actual, expected);
-	}
+    Assert.assertEquals(actual, expected);
+  }
 
-	@Test
-	public void testRemoveIfMatchesOne() throws Exception {
-		List<String> list = Arrays.asList("Polly wants a", "cracker because Polly", "is a Parrot");
-		List<String> toRemove = Arrays.asList("and Parrots like", "crackers another word");
+  @Test
+  public void testRemoveIfMatchesOne() throws Exception {
+    List<String> list = Arrays.asList("Polly wants a", "cracker because Polly", "is a Parrot");
+    List<String> toRemove = Arrays.asList("and Parrots like", "crackers another word");
 
-		Assert.assertNotNull(list);
-		Assert.assertNotNull(toRemove);
+    Assert.assertNotNull(list);
+    Assert.assertNotNull(toRemove);
 
-		List<String> actual = StringListUtils.removeIfMatches(list, toRemove);
-		List<String> expected = Arrays.asList("Polly wants a", "cracker because Polly", "is a Parrot");
+    List<String> actual = StringListUtils.removeIfMatches(list, toRemove);
+    List<String> expected = Arrays.asList("Polly wants a", "cracker because Polly", "is a Parrot");
 
-		Assert.assertNotNull(actual);
-		Assert.assertNotNull(expected);
+    Assert.assertNotNull(actual);
+    Assert.assertNotNull(expected);
 
-		Assert.assertEquals(actual, expected);
-	}
+    Assert.assertEquals(actual, expected);
+  }
 
-	@Test
-	public void testRemoveIfMatchesTwo() throws Exception {
-		List<String> list = Arrays.asList("Polly wants a", "cracker because Polly", "is a Parrot",
-				"and Parrots like", "crackers another word");
-		List<String> toRemove = Arrays.asList("and Parrots like", "crackers another word");
+  @Test
+  public void testRemoveIfMatchesTwo() throws Exception {
+    List<String> list = Arrays.asList("Polly wants a", "cracker because Polly", "is a Parrot",
+                                      "and Parrots like", "crackers another word");
+    List<String> toRemove = Arrays.asList("and Parrots like", "crackers another word");
 
-		Assert.assertNotNull(list);
-		Assert.assertNotNull(toRemove);
+    Assert.assertNotNull(list);
+    Assert.assertNotNull(toRemove);
 
-		List<String> actual = StringListUtils.removeIfMatches(list, toRemove);
-		List<String> expected = Arrays.asList("Polly wants a", "cracker because Polly", "is a Parrot");
+    List<String> actual = StringListUtils.removeIfMatches(list, toRemove);
+    List<String> expected = Arrays.asList("Polly wants a", "cracker because Polly", "is a Parrot");
 
-		Assert.assertNotNull(actual);
-		Assert.assertNotNull(expected);
+    Assert.assertNotNull(actual);
+    Assert.assertNotNull(expected);
 
-		Assert.assertEquals(actual, expected);
-	}
+    Assert.assertEquals(actual, expected);
+  }
 
-	@Test
-	public void testRemoveIfMatchesThree() throws Exception {
-		List<String> list = Arrays.asList("Polly wants a", "cracker because Polly", "is a Parrot",
-				"and Parrots like", "crackers another word");
-		List<String> toRemove = Arrays.asList("is a Parrot", "and Parrots like");
+  @Test
+  public void testRemoveIfMatchesThree() throws Exception {
+    List<String> list = Arrays.asList("Polly wants a", "cracker because Polly", "is a Parrot",
+                                      "and Parrots like", "crackers another word");
+    List<String> toRemove = Arrays.asList("is a Parrot", "and Parrots like");
 
-		Assert.assertNotNull(list);
-		Assert.assertNotNull(toRemove);
+    Assert.assertNotNull(list);
+    Assert.assertNotNull(toRemove);
 
-		List<String> actual = StringListUtils.removeIfMatches(list, toRemove);
-		List<String> expected = Arrays.asList("Polly wants a", "cracker because Polly", "crackers another word");
+    List<String> actual = StringListUtils.removeIfMatches(list, toRemove);
+    List<String>
+        expected =
+        Arrays.asList("Polly wants a", "cracker because Polly", "crackers another word");
 
-		Assert.assertNotNull(actual);
-		Assert.assertNotNull(expected);
+    Assert.assertNotNull(actual);
+    Assert.assertNotNull(expected);
 
-		Assert.assertEquals(actual, expected);
-	}
+    Assert.assertEquals(actual, expected);
+  }
 
-	@Test
-	public void testColorListOne() throws Exception {
-		List<String> list = Arrays.asList("&4Test list", "&7Please &8ig&4nore");
-		char symbol = '&';
+  @Test
+  public void testColorListOne() throws Exception {
+    List<String> list = Arrays.asList("&4Test list", "&7Please &8ig&4nore");
+    char symbol = '&';
 
-		Assert.assertNotNull(list);
-		Assert.assertNotNull(symbol);
+    Assert.assertNotNull(list);
+    Assert.assertNotNull(symbol);
 
-		List<String> actual = StringListUtils.colorList(list, symbol);
-		List<String> expected = Arrays.asList(ChatColor.DARK_RED + "Test list", ChatColor.GRAY + "Please " + ChatColor
-				.DARK_GRAY + "ig" + ChatColor.DARK_RED + "nore");
+    List<String> actual = StringListUtils.colorList(list, symbol);
+    List<String>
+        expected =
+        Arrays.asList(ChatColor.DARK_RED + "Test list", ChatColor.GRAY + "Please " + ChatColor
+            .DARK_GRAY + "ig" + ChatColor.DARK_RED + "nore");
 
-		Assert.assertNotNull(actual);
-		Assert.assertNotNull(expected);
+    Assert.assertNotNull(actual);
+    Assert.assertNotNull(expected);
 
-		Assert.assertEquals(actual, expected);
-	}
+    Assert.assertEquals(actual, expected);
+  }
 
 }
