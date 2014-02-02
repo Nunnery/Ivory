@@ -49,5 +49,9 @@ public class IvoryYamlConfiguration extends YamlConfiguration {
     }
   }
 
+  protected File getFile() {
+    return file;
+  }
+
 
 }
