@@ -5,20 +5,22 @@ import org.bukkit.configuration.file.YamlConfiguration;
 import java.io.File;
 
 /**
- * An extension of {@link org.bukkit.configuration.file.YamlConfiguration} that can perform
- * certain operations on itself.
+ * An extension of {@link org.bukkit.configuration.file.YamlConfiguration} that can load and save
+ * itself.
  */
 public class IvoryYamlConfiguration extends YamlConfiguration {
 
   private File file;
 
   /**
-   * Instantiates a new IvoryYamlConfiguration with a selected {@link java.io.File} to load/save from/to.
+   * Instantiates a new IvoryYamlConfiguration with a selected {@link java.io.File} to load/save
+   * from/to and automatically loads the file.
    * @param file file to load/save from/to
    */
   public IvoryYamlConfiguration(File file) {
     super();
     this.file = file;
+    load();
   }
 
   /**
