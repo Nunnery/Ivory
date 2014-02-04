@@ -23,7 +23,33 @@ public class VersionedIvoryYamlConfiguration extends IvoryYamlConfiguration {
    * @param updateType   type of updating
    */
   public VersionedIvoryYamlConfiguration(File file, File checkAgainst, VersionUpdateType updateType) {
-    super(file);
+    this(file, '.', checkAgainst, updateType);
+  }
+
+  /**
+   * Instantiates a new VersionedIvoryYamlConfiguration with a selected {@link java.io.File} to
+   * load/save from/to, a {@link java.io.InputStream} to check against, and an {@link net.nunnerycode.bukkit.libraries.ivory.config.VersionedIvoryYamlConfiguration.VersionUpdateType}.
+   *
+   * @param file         file to load/save from/to
+   * @param checkAgainst resource to check against
+   * @param updateType   type of updating
+   */
+  public VersionedIvoryYamlConfiguration(File file, InputStream checkAgainst,
+                                         VersionUpdateType updateType) {
+    this(file, '.', checkAgainst, updateType);
+  }
+
+  /**
+   * Instantiates a new VersionedIvoryYamlConfiguration with a selected {@link java.io.File} to
+   * load/save from/to, a {@link java.io.File} to check against, and an {@link net.nunnerycode.bukkit.libraries.ivory.config.VersionedIvoryYamlConfiguration.VersionUpdateType}.
+   *
+   * @param file         file to load/save from/to
+   * @param checkAgainst file to check against
+   * @param updateType   type of updating
+   */
+  public VersionedIvoryYamlConfiguration(File file, char separator, File checkAgainst,
+                                         VersionUpdateType updateType) {
+    super(file, separator);
     if (checkAgainst != null && checkAgainst.exists()) {
       this.checkAgainst = new IvoryYamlConfiguration(checkAgainst);
     }
@@ -38,9 +64,9 @@ public class VersionedIvoryYamlConfiguration extends IvoryYamlConfiguration {
    * @param checkAgainst resource to check against
    * @param updateType   type of updating
    */
-  public VersionedIvoryYamlConfiguration(File file, InputStream checkAgainst,
+  public VersionedIvoryYamlConfiguration(File file, char separator, InputStream checkAgainst,
                                          VersionUpdateType updateType) {
-    super(file);
+    super(file, separator);
     if (checkAgainst != null) {
       this.checkAgainst = YamlConfiguration.loadConfiguration(checkAgainst);
     }

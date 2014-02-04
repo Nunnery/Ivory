@@ -15,18 +15,31 @@ public class IvoryYamlConfiguration extends YamlConfiguration {
   /**
    * Instantiates a new IvoryYamlConfiguration with a selected {@link java.io.File} to load/save
    * from/to and automatically loads the file.
+   *
    * @param file file to load/save from/to
    */
   public IvoryYamlConfiguration(File file) {
+    this(file, '.');
+  }
+
+
+  /**
+   * Instantiates a new IvoryYamlConfiguration with a selected {@link java.io.File} to load/save
+   * from/to and automatically loads the file.
+   *
+   * @param file      file to load/save from/to
+   * @param separator separator char
+   */
+  public IvoryYamlConfiguration(File file, char separator) {
     super();
     this.file = file;
+    options().pathSeparator(separator);
     load();
   }
 
   /**
-   * Loads from the file passed into the constructor.
-   * </br>
-   * Equivalent of using {@link #load(java.io.File)} on a {@link java.io.File}.
+   * Loads from the file passed into the constructor. </br> Equivalent of using {@link
+   * #load(java.io.File)} on a {@link java.io.File}.
    */
   public void load() {
     try {
@@ -37,9 +50,8 @@ public class IvoryYamlConfiguration extends YamlConfiguration {
   }
 
   /**
-   * Saves to the file passed into the constructor.
-   * </br>
-   * Equivalent of using {@link #save(java.io.File)} on a {@link java.io.File}.
+   * Saves to the file passed into the constructor. </br> Equivalent of using {@link
+   * #save(java.io.File)} on a {@link java.io.File}.
    */
   public void save() {
     try {
