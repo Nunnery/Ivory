@@ -129,14 +129,15 @@ public class VersionedIvoryYamlConfiguration extends IvoryYamlConfiguration {
         } catch (IOException e) {
           return false;
         }
-        for (String key : getKeys(true)) {
-          set(key, null);
-        }
         for (String key : checkAgainst.getKeys(true)) {
+          if (checkAgainst.isSet(key) && !key.equals("version")) {
+            continue;
+          }
           set(key, checkAgainst.get(key));
         }
         save();
         return true;
+      case NOTHING:
       default:
         return true;
     }
