@@ -136,4 +136,24 @@ public final class StringListUtils {
     return list;
   }
 
+  public static List<String> replaceWithList(List<String> containingList, String key,
+                                             List<String> list) {
+    if (key == null) {
+      throw new IllegalArgumentException("String cannot be null");
+    }
+    if (list == null) {
+      throw  new IllegalArgumentException("List<String> cannot be null");
+    }
+
+    List<String> l = new ArrayList<>(containingList);
+    for (int i = 0; i < l.size(); i++) {
+      String k = l.get(i);
+      if (k.equals(key)) {
+        l.remove(i);
+        l.addAll(i, list);
+      }
+    }
+    return l;
+  }
+
 }
