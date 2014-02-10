@@ -47,7 +47,7 @@ public final class StringListUtils {
       }
     }
 
-    list.add(actualIndex, string);
+    list.add(Math.max(actualIndex, 0), string);
     return list;
   }
 
