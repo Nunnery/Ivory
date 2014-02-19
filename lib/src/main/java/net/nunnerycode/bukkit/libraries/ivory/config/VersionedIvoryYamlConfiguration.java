@@ -110,7 +110,7 @@ public class VersionedIvoryYamlConfiguration extends IvoryYamlConfiguration {
       return false;
     }
     File directory = getFile().getParentFile();
-    File saveTo = new File(directory, getFile().getName().replace(".yml", "_old.yml"));
+    File saveTo = new File(directory, getFile().getName().replace(".yml", ".yml.backup"));
     switch (updateType) {
       case BACKUP_NO_UPDATE:
         try {
@@ -130,9 +130,6 @@ public class VersionedIvoryYamlConfiguration extends IvoryYamlConfiguration {
           return false;
         }
         for (String key : checkAgainst.getKeys(true)) {
-          if (isSet(key) && !key.equals("version")) {
-            continue;
-          }
           set(key, checkAgainst.get(key));
         }
         save();
