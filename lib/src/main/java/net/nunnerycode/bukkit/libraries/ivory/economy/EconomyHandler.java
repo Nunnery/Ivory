@@ -16,4 +16,6 @@ public interface EconomyHandler {
 
   double getBalance(Player player);
 
+  boolean isEnabled();
+
 }
