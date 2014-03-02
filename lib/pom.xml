@@ -102,18 +102,6 @@
             <optional>true</optional>
         </dependency>
         <dependency>
-            <groupId>net.milkbowl.vault</groupId>
-            <artifactId>Vault</artifactId>
-            <version>1.2.31</version>
-        </dependency>
-        <dependency>
-            <groupId>com.fernferret.allpay</groupId>
-            <artifactId>AllPay</artifactId>
-            <version>13</version>
-            <type>jar</type>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>4.11</version>
@@ -145,18 +133,11 @@
                             <artifactSet>
                                 <includes>
                                     <include>net.nunnerycode.bukkit:ivory-*</include>
-                                    <include>com.fernferret.allpay:AllPay</include>
                                 </includes>
                                 <excludes>
                                     <excludes>net.nunnerycode.bukkit:ivory-standalone</excludes>
                                 </excludes>
                             </artifactSet>
-                            <relocations>
-                                <relocation>
-                                    <pattern>com.fernferret.allpay</pattern>
-                                    <shadedPattern>com.fernferret.allpay.ivory</shadedPattern>
-                                </relocation>
-                            </relocations>
                         </configuration>
                     </execution>
                 </executions>
