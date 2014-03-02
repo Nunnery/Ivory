@@ -7,12 +7,16 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
-public class IvorySettings {
+public final class IvorySettings {
 
   private Map<String, Object> settingMap;
 
   public IvorySettings() {
     settingMap = new ConcurrentHashMap<>();
+  }
+
+  public Object get(String key, Object fallback) {
+    return settingMap == null || !settingMap.containsKey(key) ? fallback : settingMap.get(key);
   }
 
   public void set(String key, Object object) {
