@@ -65,5 +65,9 @@ public class IvoryYamlConfiguration extends YamlConfiguration {
     return file;
   }
 
+  public String getFileName() {
+    return file != null ? file.getName() : "";
+  }
+
 
 }
