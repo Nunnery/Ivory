@@ -130,6 +130,9 @@ public class VersionedIvoryYamlConfiguration extends IvoryYamlConfiguration {
           return false;
         }
         for (String key : checkAgainst.getKeys(true)) {
+          if (checkAgainst.isConfigurationSection(key)) {
+            continue;
+          }
           set(key, checkAgainst.get(key));
         }
         save();
