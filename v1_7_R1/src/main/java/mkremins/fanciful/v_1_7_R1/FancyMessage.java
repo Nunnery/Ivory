@@ -36,7 +36,8 @@ public final class FancyMessage implements IFancyMessage {
     dirty = false;
   }
 
-  public FancyMessage color(final ChatColor color) {
+  @Override
+  public IFancyMessage color(final ChatColor color) {
     if (!color.isColor()) {
       throw new IllegalArgumentException(color.name() + " is not a color");
     }
@@ -45,7 +46,8 @@ public final class FancyMessage implements IFancyMessage {
     return this;
   }
 
-  public FancyMessage style(final ChatColor... styles) {
+  @Override
+  public IFancyMessage style(final ChatColor... styles) {
     for (final ChatColor style : styles) {
       if (!style.isFormat()) {
         throw new IllegalArgumentException(style.name() + " is not a style");
@@ -56,37 +58,44 @@ public final class FancyMessage implements IFancyMessage {
     return this;
   }
 
-  public FancyMessage file(final String path) {
+  @Override
+  public IFancyMessage file(final String path) {
     onClick("open_file", path);
     return this;
   }
 
-  public FancyMessage link(final String url) {
+  @Override
+  public IFancyMessage link(final String url) {
     onClick("open_url", url);
     return this;
   }
 
-  public FancyMessage suggest(final String command) {
+  @Override
+  public IFancyMessage suggest(final String command) {
     onClick("suggest_command", command);
     return this;
   }
 
-  public FancyMessage command(final String command) {
+  @Override
+  public IFancyMessage command(final String command) {
     onClick("run_command", command);
     return this;
   }
 
-  public FancyMessage achievementTooltip(final String name) {
+  @Override
+  public IFancyMessage achievementTooltip(final String name) {
     onHover("show_achievement", "achievement." + name);
     return this;
   }
 
-  public FancyMessage achievementTooltip(final Achievement which) {
+  @Override
+  public IFancyMessage achievementTooltip(final Achievement which) {
     net.minecraft.server.v1_7_R1.Achievement nms = CraftStatistic.getNMSAchievement(which);
     return achievementTooltip(nms.e);
   }
 
-  public FancyMessage statisticTooltip(final Statistic which) {
+  @Override
+  public IFancyMessage statisticTooltip(final Statistic which) {
     Type type = which.getType();
     if (type != Type.UNTYPED) {
       throw new IllegalArgumentException("That statistic requires an additional " + type + " parameter!");
@@ -95,7 +104,8 @@ public final class FancyMessage implements IFancyMessage {
     return achievementTooltip(nms.e);
   }
 
-  public FancyMessage statisticTooltip(final Statistic which, Material item) {
+  @Override
+  public IFancyMessage statisticTooltip(final Statistic which, Material item) {
     Type type = which.getType();
     if (type == Type.UNTYPED) {
       throw new IllegalArgumentException("That statistic needs no additional parameter!");
@@ -107,7 +117,8 @@ public final class FancyMessage implements IFancyMessage {
     return achievementTooltip(nms.e);
   }
 
-  public FancyMessage statisticTooltip(final Statistic which, EntityType entity) {
+  @Override
+  public IFancyMessage statisticTooltip(final Statistic which, EntityType entity) {
     Type type = which.getType();
     if (type == Type.UNTYPED) {
       throw new IllegalArgumentException("That statistic needs no additional parameter!");
@@ -119,16 +130,19 @@ public final class FancyMessage implements IFancyMessage {
     return achievementTooltip(nms.e);
   }
 
-  public FancyMessage itemTooltip(final String itemJSON) {
+  @Override
+  public IFancyMessage itemTooltip(final String itemJSON) {
     onHover("show_item", itemJSON);
     return this;
   }
 
-  public FancyMessage itemTooltip(final ItemStack itemStack) {
+  @Override
+  public IFancyMessage itemTooltip(final ItemStack itemStack) {
     return itemTooltip(CraftItemStack.asNMSCopy(itemStack).save(new NBTTagCompound()).toString());
   }
 
-  public FancyMessage tooltip(final String text) {
+  @Override
+  public IFancyMessage tooltip(final String text) {
     final String[] lines = text.split("\\n");
     if (lines.length <= 1) {
       onHover("show_text", text);
@@ -138,12 +152,14 @@ public final class FancyMessage implements IFancyMessage {
     return this;
   }
 
-  public FancyMessage then(final Object obj) {
+  @Override
+  public IFancyMessage then(final Object obj) {
     messageParts.add(new MessagePart(obj.toString()));
     dirty = true;
     return this;
   }
 
+  @Override
   public String toJSONString() {
     if (!dirty && jsonString != null) {
       return jsonString;
@@ -167,6 +183,7 @@ public final class FancyMessage implements IFancyMessage {
     return jsonString;
   }
 
+  @Override
   public void send(Player player){
     ((CraftPlayer) player).getHandle().playerConnection.sendPacket(new PacketPlayOutChat(ChatSerializer.a(toJSONString())));
   }

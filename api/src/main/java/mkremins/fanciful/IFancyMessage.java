@@ -1,6 +1,10 @@
 package mkremins.fanciful;
 
+import org.bukkit.Achievement;
 import org.bukkit.ChatColor;
+import org.bukkit.Material;
+import org.bukkit.Statistic;
+import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
@@ -19,6 +23,14 @@ public interface IFancyMessage {
   IFancyMessage command(String command);
 
   IFancyMessage achievementTooltip(String name);
+
+  IFancyMessage achievementTooltip(Achievement which);
+
+  IFancyMessage statisticTooltip(Statistic which);
+
+  IFancyMessage statisticTooltip(Statistic which, Material item);
+
+  IFancyMessage statisticTooltip(Statistic which, EntityType entity);
 
   IFancyMessage itemTooltip(String itemJSON);
 

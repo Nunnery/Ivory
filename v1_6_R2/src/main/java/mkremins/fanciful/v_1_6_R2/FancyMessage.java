@@ -1,6 +1,10 @@
 package mkremins.fanciful.v_1_6_R2;
 
+import org.bukkit.Achievement;
 import org.bukkit.ChatColor;
+import org.bukkit.Material;
+import org.bukkit.Statistic;
+import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
@@ -53,6 +57,26 @@ public final class FancyMessage implements IFancyMessage {
 
   @Override
   public IFancyMessage achievementTooltip(final String name) {
+    return this;
+  }
+
+  @Override
+  public IFancyMessage achievementTooltip(Achievement which) {
+    return this;
+  }
+
+  @Override
+  public IFancyMessage statisticTooltip(Statistic which) {
+    return this;
+  }
+
+  @Override
+  public IFancyMessage statisticTooltip(Statistic which, Material item) {
+    return this;
+  }
+
+  @Override
+  public IFancyMessage statisticTooltip(Statistic which, EntityType entity) {
     return this;
   }
 
