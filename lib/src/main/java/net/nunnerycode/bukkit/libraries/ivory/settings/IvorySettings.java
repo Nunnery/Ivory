@@ -3,6 +3,7 @@ package net.nunnerycode.bukkit.libraries.ivory.settings;
 import net.nunnerycode.bukkit.libraries.ivory.config.IvoryYamlConfiguration;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
@@ -13,6 +14,10 @@ public final class IvorySettings {
 
   public IvorySettings() {
     settingMap = new ConcurrentHashMap<>();
+  }
+
+  public Map<String, Object> getSettingMap() {
+    return new HashMap<>(settingMap);
   }
 
   public Object get(String key, Object fallback) {
