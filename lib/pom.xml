@@ -109,16 +109,9 @@
             <scope>compile</scope>
         </dependency>
         <dependency>
-            <groupId>net.minidev</groupId>
-            <artifactId>json-smart</artifactId>
-            <version>1.1.1</version>
-            <type>jar</type>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.intellij</groupId>
-            <artifactId>annotations</artifactId>
-            <version>9.0.4</version>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>2.2.4</version>
             <type>jar</type>
             <scope>compile</scope>
         </dependency>
@@ -154,7 +147,7 @@
                             <artifactSet>
                                 <includes>
                                     <include>net.nunnerycode.bukkit:ivory-*</include>
-                                    <include>net.minidev:json-smart</include>
+                                    <include>com.google.code.gson:gson</include>
                                     <include>com.dumptruckman.minecraft:JsonConfiguration</include>
                                     <include>com.intellij:annotations</include>
                                 </includes>
