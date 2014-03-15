@@ -53,9 +53,12 @@
             <url>http://nexus.theyeticave.net/content/repositories/pub_releases</url>
         </repository>
         <repository>
-            <id>onarandombox</id>
-            <name>On a Random Box Repository</name>
-            <url>http://repo.onarandombox.com/content/groups/public</url>
+            <id>nunnerycode-repo</id>
+            <url>http://repository-topplethenun.forge.cloudbees.com/snapshot/</url>
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>always</updatePolicy>
+            </snapshots>
         </repository>
     </repositories>
 
