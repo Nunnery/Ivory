@@ -3,7 +3,6 @@ package net.nunnerycode.bukkit.libraries.ivory.config;
 import com.dumptruckman.bukkit.configuration.json.JsonConfiguration;
 
 import java.io.File;
-import java.io.IOException;
 import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
 
@@ -96,20 +95,15 @@ public class VersionedIvoryJsonConfiguration extends IvoryJsonConfiguration
     File saveTo = new File(directory, getFile().getName().replace(".yml", ".yml.backup"));
     switch (updateType) {
       case BACKUP_NO_UPDATE:
-        try {
-          if (getFile().exists()) {
-            save(saveTo);
-          }
-        } catch (IOException e) {
-          return false;
+        if (getFile().exists()) {
+          save(saveTo);
+          return true;
         }
-        return true;
+        return false;
       case BACKUP_AND_UPDATE:
-        try {
-          if (getFile().exists()) {
-            save(saveTo);
-          }
-        } catch (IOException e) {
+        if (getFile().exists()) {
+          save(saveTo);
+        } else {
           return false;
         }
         for (String key : checkAgainst.getKeys(true)) {
