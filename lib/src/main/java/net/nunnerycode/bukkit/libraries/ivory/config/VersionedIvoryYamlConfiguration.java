@@ -9,26 +9,30 @@ import java.io.InputStream;
 /**
  * An extension of IvoryYamlConfiguration that can backup and update itself.
  */
-public class VersionedIvoryYamlConfiguration extends IvoryYamlConfiguration {
+public class VersionedIvoryYamlConfiguration extends IvoryYamlConfiguration
+    implements VersionedIvoryConfiguration {
 
   private YamlConfiguration checkAgainst;
   private VersionUpdateType updateType;
 
   /**
    * Instantiates a new VersionedIvoryYamlConfiguration with a selected {@link java.io.File} to
-   * load/save from/to, a {@link java.io.File} to check against, and an {@link net.nunnerycode.bukkit.libraries.ivory.config.VersionedIvoryYamlConfiguration.VersionUpdateType}.
+   * load/save from/to, a {@link java.io.File} to check against, and an {@link
+   * net.nunnerycode.bukkit.libraries.ivory.config.VersionedIvoryYamlConfiguration.VersionUpdateType}.
    *
    * @param file         file to load/save from/to
    * @param checkAgainst file to check against
    * @param updateType   type of updating
    */
-  public VersionedIvoryYamlConfiguration(File file, File checkAgainst, VersionUpdateType updateType) {
+  public VersionedIvoryYamlConfiguration(File file, File checkAgainst,
+                                         VersionUpdateType updateType) {
     this(file, '.', checkAgainst, updateType);
   }
 
   /**
    * Instantiates a new VersionedIvoryYamlConfiguration with a selected {@link java.io.File} to
-   * load/save from/to, a {@link java.io.InputStream} to check against, and an {@link net.nunnerycode.bukkit.libraries.ivory.config.VersionedIvoryYamlConfiguration.VersionUpdateType}.
+   * load/save from/to, a {@link java.io.InputStream} to check against, and an {@link
+   * net.nunnerycode.bukkit.libraries.ivory.config.VersionedIvoryYamlConfiguration.VersionUpdateType}.
    *
    * @param file         file to load/save from/to
    * @param checkAgainst resource to check against
@@ -41,7 +45,8 @@ public class VersionedIvoryYamlConfiguration extends IvoryYamlConfiguration {
 
   /**
    * Instantiates a new VersionedIvoryYamlConfiguration with a selected {@link java.io.File} to
-   * load/save from/to, a {@link java.io.File} to check against, and an {@link net.nunnerycode.bukkit.libraries.ivory.config.VersionedIvoryYamlConfiguration.VersionUpdateType}.
+   * load/save from/to, a {@link java.io.File} to check against, and an {@link
+   * net.nunnerycode.bukkit.libraries.ivory.config.VersionedIvoryYamlConfiguration.VersionUpdateType}.
    *
    * @param file         file to load/save from/to
    * @param checkAgainst file to check against
@@ -58,7 +63,8 @@ public class VersionedIvoryYamlConfiguration extends IvoryYamlConfiguration {
 
   /**
    * Instantiates a new VersionedIvoryYamlConfiguration with a selected {@link java.io.File} to
-   * load/save from/to, a {@link java.io.InputStream} to check against, and an {@link net.nunnerycode.bukkit.libraries.ivory.config.VersionedIvoryYamlConfiguration.VersionUpdateType}.
+   * load/save from/to, a {@link java.io.InputStream} to check against, and an {@link
+   * net.nunnerycode.bukkit.libraries.ivory.config.VersionedIvoryYamlConfiguration.VersionUpdateType}.
    *
    * @param file         file to load/save from/to
    * @param checkAgainst resource to check against
@@ -78,6 +84,7 @@ public class VersionedIvoryYamlConfiguration extends IvoryYamlConfiguration {
    *
    * @return version passed into the constructor
    */
+  @Override
   public String getVersion() {
     return checkAgainst == null ? "" : checkAgainst.getString("version", "");
   }
@@ -87,6 +94,7 @@ public class VersionedIvoryYamlConfiguration extends IvoryYamlConfiguration {
    *
    * @return version in the YAML file
    */
+  @Override
   public String getLocalVersion() {
     return getString("version", "");
   }
@@ -96,6 +104,7 @@ public class VersionedIvoryYamlConfiguration extends IvoryYamlConfiguration {
    *
    * @return if file needs to update
    */
+  @Override
   public boolean needsToUpdate() {
     return !(getVersion() == null && getLocalVersion() == null) && !getVersion()
         .equals(getLocalVersion());
@@ -103,8 +112,10 @@ public class VersionedIvoryYamlConfiguration extends IvoryYamlConfiguration {
 
   /**
    * Attempts to update itself and returns if it succeeded.
+   *
    * @return if update was successful
    */
+  @Override
   public boolean update() {
     if (!needsToUpdate()) {
       return false;
@@ -141,10 +152,6 @@ public class VersionedIvoryYamlConfiguration extends IvoryYamlConfiguration {
       default:
         return true;
     }
-  }
-
-  public static enum VersionUpdateType {
-    BACKUP_NO_UPDATE, BACKUP_AND_UPDATE, NOTHING
   }
 
 
