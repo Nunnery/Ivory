@@ -116,6 +116,13 @@
             <scope>compile</scope>
         </dependency>
         <dependency>
+            <groupId>com.intellij</groupId>
+            <artifactId>annotations</artifactId>
+            <version>9.0.4</version>
+            <type>jar</type>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>4.11</version>
@@ -149,6 +156,7 @@
                                     <include>net.nunnerycode.bukkit:ivory-*</include>
                                     <include>net.minidev:json-smart</include>
                                     <include>com.dumptruckman.minecraft:JsonConfiguration</include>
+                                    <include>com.intellij:annotations</include>
                                 </includes>
                                 <excludes>
                                     <excludes>net.nunnerycode.bukkit:ivory-standalone</excludes>
