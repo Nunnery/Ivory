@@ -8,7 +8,7 @@ import java.io.File;
  * An extension of {@link org.bukkit.configuration.file.YamlConfiguration} that can load and save
  * itself.
  */
-public class IvoryYamlConfiguration extends YamlConfiguration {
+public class IvoryYamlConfiguration extends YamlConfiguration implements IvoryConfiguration {
 
   private File file;
 
@@ -41,6 +41,7 @@ public class IvoryYamlConfiguration extends YamlConfiguration {
    * Loads from the file passed into the constructor. </br> Equivalent of using {@link
    * #load(java.io.File)} on a {@link java.io.File}.
    */
+  @Override
   public void load() {
     try {
       load(this.file);
@@ -53,6 +54,7 @@ public class IvoryYamlConfiguration extends YamlConfiguration {
    * Saves to the file passed into the constructor. </br> Equivalent of using {@link
    * #save(java.io.File)} on a {@link java.io.File}.
    */
+  @Override
   public void save() {
     try {
       save(this.file);
@@ -61,10 +63,12 @@ public class IvoryYamlConfiguration extends YamlConfiguration {
     }
   }
 
-  protected File getFile() {
+  @Override
+  public File getFile() {
     return file;
   }
 
+  @Override
   public String getFileName() {
     return file != null ? file.getName() : "";
   }
