@@ -8,6 +8,10 @@ public final class StringUtils {
     // do nothing
   }
 
+  public static String convertBytesToCharset(byte[] bytes, Charset charset) {
+    return new String(bytes, charset);
+  }
+
   public static byte[] convertStringToCharset(String string, Charset charset) {
     return string.getBytes(charset);
   }
