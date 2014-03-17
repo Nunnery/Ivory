@@ -1,6 +1,6 @@
 package net.nunnerycode.bukkit.libraries.ivory.utils;
 
-import java.nio.charset.StandardCharsets;
+import java.nio.charset.Charset;
 
 public final class StringUtils {
 
@@ -8,8 +8,8 @@ public final class StringUtils {
     // do nothing
   }
 
-  public static byte[] convertStringToUTF8(String string) {
-    return string.getBytes(StandardCharsets.UTF_8);
+  public static byte[] convertStringToCharset(String string, Charset charset) {
+    return string.getBytes(charset);
   }
 
   public static String replaceArgs(String string, String[][] args) {
