@@ -97,7 +97,13 @@ public final class IvorySettings {
         if (yc.isConfigurationSection(key)) {
           continue;
         }
-        set(name + "." + key, yc.get(key));
+        Object value;
+        if (yc.isBoolean(key) || yc.isDouble(key) || yc.isInt(key) || yc.isLong(key) || yc.isString(key)) {
+          value = yc.getString(key);
+        } else {
+          value = yc.get(key);
+        }
+        set(name + "." + key, value);
       }
     }
   }
