@@ -2,6 +2,8 @@ package net.nunnerycode.bukkit.libraries.ivory.settings;
 
 import net.nunnerycode.bukkit.libraries.ivory.config.IvoryYamlConfiguration;
 
+import org.apache.commons.lang.math.NumberUtils;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -36,7 +38,10 @@ public final class IvorySettings {
       return fallback;
     }
     Object val = settingMap.get(key);
-    return !(val instanceof String) ? fallback : (String) val;
+    if (val instanceof String) {
+      return (String) val;
+    }
+    return String.valueOf(val);
   }
 
   public List<String> getStringList(String key, List<String> fallback) {
@@ -60,7 +65,13 @@ public final class IvorySettings {
       return fallback;
     }
     Object val = settingMap.get(key);
-    return !(val instanceof Boolean) ? fallback : (Boolean) val;
+    if (val instanceof Boolean) {
+      return (Boolean) val;
+    }
+    if (val instanceof String) {
+      return Boolean.parseBoolean((String) val);
+    }
+    return fallback;
   }
 
   public int getInt(String key, int fallback) {
@@ -68,7 +79,13 @@ public final class IvorySettings {
       return fallback;
     }
     Object val = settingMap.get(key);
-    return !(val instanceof Integer) ? fallback : (Integer) val;
+    if (val instanceof Integer) {
+      return (Integer) val;
+    }
+    if (val instanceof String) {
+      return NumberUtils.toInt((String) val, fallback);
+    }
+    return fallback;
   }
 
   public long getLong(String key, long fallback) {
@@ -76,7 +93,13 @@ public final class IvorySettings {
       return fallback;
     }
     Object val = settingMap.get(key);
-    return !(val instanceof Long) ? fallback : (Long) val;
+    if (val instanceof Long) {
+      return (Long) val;
+    }
+    if (val instanceof String) {
+      return NumberUtils.toLong((String) val, fallback);
+    }
+    return fallback;
   }
 
   public double getDouble(String key, double fallback) {
@@ -84,7 +107,13 @@ public final class IvorySettings {
       return fallback;
     }
     Object val = settingMap.get(key);
-    return !(val instanceof Double) ? fallback : (Double) val;
+    if (val instanceof Double) {
+      return (Double) val;
+    }
+    if (val instanceof String) {
+      return NumberUtils.toDouble((String) val, fallback);
+    }
+    return fallback;
   }
 
   public void load(IvoryYamlConfiguration... yamlConfigurations) {
