@@ -8,6 +8,8 @@ import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
+import java.util.List;
+
 import mkremins.fanciful.IFancyMessage;
 
 public final class FancyMessage implements IFancyMessage {
@@ -92,6 +94,16 @@ public final class FancyMessage implements IFancyMessage {
 
   @Override
   public IFancyMessage tooltip(final String text) {
+    return this;
+  }
+
+  @Override
+  public IFancyMessage tooltip(String... lines) {
+    return this;
+  }
+
+  @Override
+  public IFancyMessage tooltip(List<String> lines) {
     return this;
   }
 
