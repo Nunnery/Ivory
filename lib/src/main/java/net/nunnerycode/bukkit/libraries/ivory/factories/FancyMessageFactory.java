@@ -20,15 +20,18 @@ public final class FancyMessageFactory {
   }
 
   /**
-   * Creates a new {@link mkremins.fanciful.IFancyMessage} for use.
-   * </br>
-   * Returns null if using a package that's not recognized.
+   * Creates a new {@link mkremins.fanciful.IFancyMessage} for use. </br> Returns null if using a
+   * package that's not recognized.
+   *
    * @return new IFancyMessage
    */
   public IFancyMessage getNewFancyMessage() {
     String pkg = Bukkit.getServer().getClass().getPackage().getName();
-    if (pkg.equals("org.bukkit.craftbukkit.v1_5_R2")) {
-      return new mkremins.fanciful.v_1_5_R2.FancyMessage("");
+    if (pkg.equals("org.bukkit.craftbukkit.v1_7_R2")) {
+      return new mkremins.fanciful.v_1_7_R2.FancyMessage("");
+    }
+    if (pkg.equals("org.bukkit.craftbukkit.v1_7_R1")) {
+      return new mkremins.fanciful.v_1_7_R1.FancyMessage("");
     }
     if (pkg.equals("org.bukkit.craftbukkit.v1_6_R3")) {
       return new mkremins.fanciful.v_1_6_R3.FancyMessage("");
