@@ -11,7 +11,7 @@ public interface VersionedIvoryConfiguration {
   boolean update();
 
   public static enum VersionUpdateType {
-    BACKUP_NO_UPDATE, BACKUP_AND_UPDATE, NOTHING
+    BACKUP_NO_UPDATE, BACKUP_AND_UPDATE, BACKUP_AND_NEW, NOTHING
   }
 
 }
