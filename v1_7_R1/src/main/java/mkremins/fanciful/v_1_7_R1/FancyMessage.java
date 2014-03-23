@@ -98,7 +98,8 @@ public final class FancyMessage implements IFancyMessage {
   public IFancyMessage statisticTooltip(final Statistic which) {
     Type type = which.getType();
     if (type != Type.UNTYPED) {
-      throw new IllegalArgumentException("That statistic requires an additional " + type + " parameter!");
+      throw new IllegalArgumentException(
+          "That statistic requires an additional " + type + " parameter!");
     }
     net.minecraft.server.v1_7_R1.Statistic nms = CraftStatistic.getNMSStatistic(which);
     return achievementTooltip(nms.e);
@@ -111,7 +112,8 @@ public final class FancyMessage implements IFancyMessage {
       throw new IllegalArgumentException("That statistic needs no additional parameter!");
     }
     if ((type == Type.BLOCK && item.isBlock()) || type == Type.ENTITY) {
-      throw new IllegalArgumentException("Wrong parameter type for that statistic - needs " + type + "!");
+      throw new IllegalArgumentException(
+          "Wrong parameter type for that statistic - needs " + type + "!");
     }
     net.minecraft.server.v1_7_R1.Statistic nms = CraftStatistic.getMaterialStatistic(which, item);
     return achievementTooltip(nms.e);
@@ -124,7 +126,8 @@ public final class FancyMessage implements IFancyMessage {
       throw new IllegalArgumentException("That statistic needs no additional parameter!");
     }
     if (type != Type.ENTITY) {
-      throw new IllegalArgumentException("Wrong parameter type for that statistic - needs " + type + "!");
+      throw new IllegalArgumentException(
+          "Wrong parameter type for that statistic - needs " + type + "!");
     }
     net.minecraft.server.v1_7_R1.Statistic nms = CraftStatistic.getEntityStatistic(which, entity);
     return achievementTooltip(nms.e);
@@ -146,6 +149,21 @@ public final class FancyMessage implements IFancyMessage {
     final String[] lines = text.split("\\n");
     if (lines.length <= 1) {
       onHover("show_text", text);
+    } else {
+      itemTooltip(makeMultilineTooltip(lines));
+    }
+    return this;
+  }
+
+  @Override
+  public FancyMessage tooltip(final List<String> lines) {
+    return tooltip((String[]) lines.toArray());
+  }
+
+  @Override
+  public FancyMessage tooltip(final String... lines) {
+    if (lines.length == 1) {
+      onHover("show_text", lines[0]);
     } else {
       itemTooltip(makeMultilineTooltip(lines));
     }
@@ -184,8 +202,9 @@ public final class FancyMessage implements IFancyMessage {
   }
 
   @Override
-  public void send(Player player){
-    ((CraftPlayer) player).getHandle().playerConnection.sendPacket(new PacketPlayOutChat(ChatSerializer.a(toJSONString())));
+  public void send(Player player) {
+    ((CraftPlayer) player).getHandle().playerConnection
+        .sendPacket(new PacketPlayOutChat(ChatSerializer.a(toJSONString())));
   }
 
   private MessagePart latest() {
