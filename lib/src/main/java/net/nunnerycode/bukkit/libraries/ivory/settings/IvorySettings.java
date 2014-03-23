@@ -18,6 +18,12 @@ public final class IvorySettings {
     settingMap = new ConcurrentHashMap<>();
   }
 
+  public static IvorySettings loadFromFiles(IvoryYamlConfiguration... yamlConfigurations) {
+    IvorySettings ivorySettings = new IvorySettings();
+    ivorySettings.load(yamlConfigurations);
+    return ivorySettings;
+  }
+
   public Map<String, Object> getSettingMap() {
     return new HashMap<>(settingMap);
   }
@@ -127,7 +133,8 @@ public final class IvorySettings {
           continue;
         }
         Object value;
-        if (yc.isBoolean(key) || yc.isDouble(key) || yc.isInt(key) || yc.isLong(key) || yc.isString(key)) {
+        if (yc.isBoolean(key) || yc.isDouble(key) || yc.isInt(key) || yc.isLong(key) || yc
+            .isString(key)) {
           value = yc.getString(key);
         } else {
           value = yc.get(key);
@@ -137,10 +144,4 @@ public final class IvorySettings {
     }
   }
 
-  public static IvorySettings loadFromFiles(IvoryYamlConfiguration... yamlConfigurations) {
-    IvorySettings ivorySettings = new IvorySettings();
-    ivorySettings.load(yamlConfigurations);
-    return ivorySettings;
-  }
-  
 }

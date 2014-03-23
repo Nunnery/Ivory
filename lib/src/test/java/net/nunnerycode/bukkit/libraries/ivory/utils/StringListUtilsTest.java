@@ -26,7 +26,9 @@ public class StringListUtilsTest {
     List<String> containingList = Arrays.asList(key, "Test", key);
     List<String> replacementList = Arrays.asList("One", "Two", "Three", "Four");
 
-    List<String> expected = Arrays.asList("One", "Two", "Three", "Four", "Test", "One", "Two", "Three", "Four");
+    List<String>
+        expected =
+        Arrays.asList("One", "Two", "Three", "Four", "Test", "One", "Two", "Three", "Four");
     List<String> actual = StringListUtils.replaceWithList(containingList, key, replacementList);
 
     Assert.assertEquals(expected, actual);

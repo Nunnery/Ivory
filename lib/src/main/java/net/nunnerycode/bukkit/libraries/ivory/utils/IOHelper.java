@@ -40,7 +40,7 @@ public final class IOHelper {
     int length = (int) file.length();
     byte[] bytes = new byte[length];
 
-    try(InputStream inputStream = new FileInputStream(file)) {
+    try (InputStream inputStream = new FileInputStream(file)) {
       int i = 0;
       while (i < length) {
         i += inputStream.read(bytes, i, length - i);

@@ -5,11 +5,11 @@ import org.bukkit.craftbukkit.libs.com.google.gson.stream.JsonWriter;
 
 final class MessagePart {
 
+  final String text;
   ChatColor color = null;
   ChatColor[] styles = null;
   String clickActionName = null, clickActionData = null,
       hoverActionName = null, hoverActionData = null;
-  final String text;
 
   MessagePart(final String text) {
     this.text = text;

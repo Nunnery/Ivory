@@ -15,7 +15,8 @@ public final class MessageUtils {
     commandSender.sendMessage(message);
   }
 
-  public static void sendArgumentMessage(CommandSender commandSender, String message, String[][] args) {
+  public static void sendArgumentMessage(CommandSender commandSender, String message,
+                                         String[][] args) {
     if (commandSender == null || message == null || args == null) {
       return;
     }
@@ -33,7 +34,8 @@ public final class MessageUtils {
     commandSender.sendMessage(message.replace('&', '\u00A7').replace("\u00A7\u00A7", "&"));
   }
 
-  public static void sendColoredArgumentMessage(CommandSender commandSender, String message, String[][] args) {
+  public static void sendColoredArgumentMessage(CommandSender commandSender, String message,
+                                                String[][] args) {
     if (commandSender == null || message == null || args == null) {
       return;
     }
