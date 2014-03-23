@@ -1,10 +1,10 @@
 package mkremins.fanciful.v_1_7_R2;
 
 
-import mkremins.fanciful.IFancyMessage;
 import net.minecraft.server.v1_7_R2.ChatSerializer;
 import net.minecraft.server.v1_7_R2.NBTTagCompound;
 import net.minecraft.server.v1_7_R2.PacketPlayOutChat;
+
 import org.bukkit.Achievement;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
@@ -21,6 +21,8 @@ import org.json.JSONStringer;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import mkremins.fanciful.IFancyMessage;
 
 public final class FancyMessage implements IFancyMessage {
 
@@ -150,6 +152,21 @@ public final class FancyMessage implements IFancyMessage {
         }
         return this;
     }
+
+  @Override
+  public FancyMessage tooltip(final List<String> lines) {
+    return tooltip((String[]) lines.toArray());
+  }
+
+  @Override
+  public FancyMessage tooltip(final String... lines) {
+    if (lines.length == 1) {
+      onHover("show_text", lines[0]);
+    } else {
+      itemTooltip(makeMultilineTooltip(lines));
+    }
+    return this;
+  }
 
     @Override
     public IFancyMessage then(final Object obj) {
