@@ -106,8 +106,7 @@ public class VersionedIvoryYamlConfiguration extends IvoryYamlConfiguration
    */
   @Override
   public boolean needsToUpdate() {
-    return !(getVersion() == null && getLocalVersion() == null) && !getVersion()
-        .equals(getLocalVersion());
+    return getVersion() != null && getLocalVersion() != null && !getLocalVersion().equals(getVersion());
   }
 
   /**
