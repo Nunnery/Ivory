@@ -10,15 +10,15 @@ import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.Statistic;
 import org.bukkit.Statistic.Type;
+import org.bukkit.craftbukkit.libs.com.google.gson.stream.JsonWriter;
 import org.bukkit.craftbukkit.v1_7_R2.CraftStatistic;
 import org.bukkit.craftbukkit.v1_7_R2.entity.CraftPlayer;
 import org.bukkit.craftbukkit.v1_7_R2.inventory.CraftItemStack;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
-import org.json.JSONException;
-import org.json.JSONStringer;
 
+import java.io.StringWriter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -175,29 +175,31 @@ public final class FancyMessage implements IFancyMessage {
         return this;
     }
 
-    @Override
-    public String toJSONString() {
-        if (!dirty && jsonString != null) {
-            return jsonString;
-        }
-        final JSONStringer json = new JSONStringer();
-        try {
-            if (messageParts.size() == 1) {
-                latest().writeJson(json);
-            } else {
-                json.object().key("text").value("").key("extra").array();
-                for (final MessagePart part : messageParts) {
-                    part.writeJson(json);
-                }
-                json.endArray().endObject();
-            }
-        } catch (final JSONException e) {
-            throw new RuntimeException("invalid message");
-        }
-        jsonString = json.toString();
-        dirty = false;
-        return jsonString;
+  @Override
+  public String toJSONString() {
+    if (!dirty && jsonString != null) {
+      return jsonString;
     }
+    StringWriter string = new StringWriter();
+    JsonWriter json = new JsonWriter(string);
+    try {
+      if (messageParts.size() == 1) {
+        latest().writeJson(json);
+      } else {
+        json.beginObject().name("text").value("").name("extra").beginArray();
+        for (final MessagePart part : messageParts) {
+          part.writeJson(json);
+        }
+        json.endArray().endObject();
+        json.close();
+      }
+    } catch (Exception e) {
+      throw new RuntimeException("invalid message");
+    }
+    jsonString = string.toString();
+    dirty = false;
+    return jsonString;
+  }
 
     @Override
     public void send(Player player) {
@@ -208,23 +210,25 @@ public final class FancyMessage implements IFancyMessage {
         return messageParts.get(messageParts.size() - 1);
     }
 
-    private String makeMultilineTooltip(final String[] lines) {
-        final JSONStringer json = new JSONStringer();
-        try {
-            json.object().key("id").value(1);
-            json.key("tag").object().key("display").object();
-            json.key("Name").value("\\u00A7f" + lines[0].replace("\"", "\\\""));
-            json.key("Lore").array();
-            for (int i = 1; i < lines.length; i++) {
-                final String line = lines[i];
-                json.value(line.isEmpty() ? " " : line.replace("\"", "\\\""));
-            }
-            json.endArray().endObject().endObject().endObject();
-        } catch (final JSONException e) {
-            throw new RuntimeException("invalid tooltip");
-        }
-        return json.toString();
+  private String makeMultilineTooltip(final String[] lines) {
+    StringWriter string = new StringWriter();
+    JsonWriter json = new JsonWriter(string);
+    try {
+      json.beginObject().name("id").value(1);
+      json.name("tag").beginObject().name("display").beginObject();
+      json.name("Name").value("\\u00A7f" + lines[0].replace("\"", "\\\""));
+      json.name("Lore").beginArray();
+      for (int i = 1; i < lines.length; i++) {
+        final String line = lines[i];
+        json.value(line.isEmpty() ? " " : line.replace("\"", "\\\""));
+      }
+      json.endArray().endObject().endObject().endObject();
+      json.close();
+    } catch (Exception e) {
+      throw new RuntimeException("invalid tooltip");
     }
+    return string.toString();
+  }
 
     private void onClick(final String name, final String data) {
         final MessagePart latest = latest();
