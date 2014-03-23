@@ -106,7 +106,8 @@ public class VersionedIvoryYamlConfiguration extends IvoryYamlConfiguration
    */
   @Override
   public boolean needsToUpdate() {
-    return getVersion() != null && getLocalVersion() != null && !getLocalVersion().equals(getVersion());
+    return getVersion() != null && getLocalVersion() != null && !getLocalVersion()
+        .equals(getVersion());
   }
 
   /**
@@ -143,11 +144,30 @@ public class VersionedIvoryYamlConfiguration extends IvoryYamlConfiguration
           if (checkAgainst.isConfigurationSection(key)) {
             continue;
           }
-          set(key, checkAgainst.get(key));
+          if (!isSet(key)) {
+            set(key, checkAgainst.get(key));
+          }
         }
+        set("version", getVersion());
         save();
         return true;
-      case NOTHING:
+      case BACKUP_AND_NEW:
+        try {
+          if (getFile().exists()) {
+            save(saveTo);
+          }
+        } catch (IOException e) {
+          return false;
+        }
+        for (String key : checkAgainst.getKeys(true)) {
+          if (checkAgainst.isConfigurationSection(key)) {
+            continue;
+          }
+          set(key, checkAgainst.get(key));
+        }
+        set("version", getVersion());
+        save();
+        return true;
       default:
         return true;
     }
