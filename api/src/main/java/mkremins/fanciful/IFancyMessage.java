@@ -8,6 +8,8 @@ import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
+import java.util.List;
+
 public interface IFancyMessage {
 
   IFancyMessage color(ChatColor color);
@@ -37,6 +39,10 @@ public interface IFancyMessage {
   IFancyMessage itemTooltip(ItemStack itemStack);
 
   IFancyMessage tooltip(String text);
+
+  IFancyMessage tooltip(String... lines);
+
+  IFancyMessage tooltip(List<String> lines);
 
   IFancyMessage then(Object obj);
 
