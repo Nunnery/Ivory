@@ -156,7 +156,6 @@
                                     <include>net.nunnerycode.bukkit:ivory-*</include>
                                     <include>com.google.code.gson:gson</include>
                                     <include>com.dumptruckman.minecraft:JsonConfiguration</include>
-                                    <include>com.intellij:annotations</include>
                                 </includes>
                                 <excludes>
                                     <excludes>net.nunnerycode.bukkit:ivory-standalone</excludes>
