@@ -69,6 +69,7 @@
                                     <include>se.ranzdo.bukkit:methodcommand</include>
                                     <include>net.nunnerycode.java.libraries:Cannonball</include>
                                     <include>net.nunnerycode.bukkit:ivory-lib</include>
+                                    <include>com.dumptruckman.minecraft:JsonConfiguration</include>
                                 </includes>
                             </artifactSet>
                             <relocations>
@@ -126,6 +127,11 @@
             <version>1.0.0-SNAPSHOT</version>
             <type>jar</type>
             <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.dumptruckman.minecraft</groupId>
+            <artifactId>JsonConfiguration</artifactId>
+            <version>1.0-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>junit</groupId>
