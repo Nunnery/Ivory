@@ -44,7 +44,11 @@ public class IvoryJsonConfiguration extends JsonConfiguration implements IvoryCo
 
   @Override
   public void save() {
-    save(file);
+    try {
+      save(file);
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
   }
 
   @Override
