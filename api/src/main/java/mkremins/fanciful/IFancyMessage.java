@@ -50,4 +50,6 @@ public interface IFancyMessage {
 
   void send(Player player);
 
+  void send(Iterable<Player> players);
+
 }
