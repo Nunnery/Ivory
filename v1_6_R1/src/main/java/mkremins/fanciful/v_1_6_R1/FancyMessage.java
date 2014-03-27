@@ -123,4 +123,11 @@ public final class FancyMessage implements IFancyMessage {
     player.sendMessage(toJSONString());
   }
 
+  @Override
+  public void send(Iterable<Player> players) {
+    for (Player player : players) {
+      send(player);
+    }
+  }
+
 }
