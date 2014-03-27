@@ -209,6 +209,13 @@ public final class FancyMessage implements IFancyMessage {
         .sendPacket(new PacketPlayOutChat(ChatSerializer.a(toJSONString())));
   }
 
+  @Override
+  public void send(Iterable<Player> players) {
+    for (Player player : players) {
+      send(player);
+    }
+  }
+
   private MessagePart latest() {
     return messageParts.get(messageParts.size() - 1);
   }
