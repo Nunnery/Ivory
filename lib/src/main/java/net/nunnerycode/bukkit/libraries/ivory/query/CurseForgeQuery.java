@@ -1,5 +1,6 @@
 package net.nunnerycode.bukkit.libraries.ivory.query;
 
+import org.bukkit.Bukkit;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.JSONValue;
@@ -19,31 +20,49 @@ public final class CurseForgeQuery {
   private static final String PROJECT_SLUG = "slug";
   private static final String PROJECT_STAGE = "stage";
 
-  public BukkitProject query(String name) throws IOException {
-    URL url = new URL(API_HOST + API_QUERY + name.toLowerCase());
-    URLConnection conn = url.openConnection();
-    final BufferedReader reader = new BufferedReader(new InputStreamReader(conn.getInputStream()));
-    String response = reader.readLine();
-    JSONArray array = (JSONArray) JSONValue.parse(response);
-    for (int i = 0; i < array.size(); i++) {
-      JSONObject jsonObject = (JSONObject) array.get(i);
-      String projectName = (String) jsonObject.get(PROJECT_NAME);
-      if (!projectName.equalsIgnoreCase(name)) {
-        continue;
+  public BukkitProject query(String name) {
+    URL url;
+    URLConnection conn;
+    BufferedReader reader = null;
+    try {
+      url = new URL(API_HOST + API_QUERY + name.toLowerCase());
+      conn = url.openConnection();
+      reader =
+          new BufferedReader(new InputStreamReader(conn.getInputStream()));
+      String response = reader.readLine();
+      JSONArray array = (JSONArray) JSONValue.parse(response);
+      for (int i = 0; i < array.size(); i++) {
+        JSONObject jsonObject = (JSONObject) array.get(i);
+        String projectName = (String) jsonObject.get(PROJECT_NAME);
+        if (!projectName.equalsIgnoreCase(name)) {
+          continue;
+        }
+        String slug = (String) jsonObject.get(PROJECT_SLUG);
+        ProjectStage
+            projectStage =
+            ProjectStage.valueOf(((String) jsonObject.get(PROJECT_STAGE)).toUpperCase());
+        long id = (Long) jsonObject.get(PROJECT_ID);
+        return new BukkitProject(id, projectName, slug, projectStage);
       }
-      String slug = (String) jsonObject.get(PROJECT_SLUG);
-      ProjectStage projectStage = ProjectStage.valueOf(((String)jsonObject.get(PROJECT_STAGE)).toUpperCase());
-      long id = (Long) jsonObject.get(PROJECT_ID);
-      return new BukkitProject(id, projectName, slug, projectStage);
+    } catch (IOException e) {
+      Bukkit.getLogger().info("Could not query CurseForge when looking for: " + name);
+    } finally {
+      try {
+        if (reader != null) {
+          reader.close();
+        }
+      } catch (IOException e) {
+        e.printStackTrace();
+      }
     }
     return null;
   }
 
-  public enum ProjectStage {
+  public static enum ProjectStage {
     PLANNING, ALPHA, BETA, RELEASE, DELETED, MATURE, INACTIVE, ABANDONED
   }
 
-  public class BukkitProject {
+  public static class BukkitProject {
 
     private long id;
     private String name;
