@@ -116,6 +116,23 @@ public final class StringListUtils {
     return list;
   }
 
+  public static boolean equalsColorless(List<String> strings, List<String> otherStrings) {
+    if (strings == null || otherStrings == null) {
+      throw new IllegalArgumentException("List<String> cannot be null");
+    }
+    if (strings.size() != otherStrings.size()) {
+      return false;
+    }
+    for (int i = 0; i < strings.size(); i++) {
+      String colorlessOne = strings.get(i).replace(String.valueOf('\u00A7'), "");
+      String colorlessTwo = strings.get(i).replace(String.valueOf('\u00A7'), "");
+      if (!colorlessOne.equals(colorlessTwo)) {
+        return false;
+      }
+    }
+    return true;
+  }
+
   public static List<String> removeIfMatchesColorless(List<String> strings, List<String> otherStrings) {
     if (strings == null || otherStrings == null) {
       throw new IllegalArgumentException("List<String> cannot be null");
