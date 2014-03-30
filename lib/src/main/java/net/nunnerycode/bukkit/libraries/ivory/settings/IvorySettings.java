@@ -1,5 +1,6 @@
 package net.nunnerycode.bukkit.libraries.ivory.settings;
 
+import net.nunnerycode.bukkit.libraries.ivory.config.IvoryJsonConfiguration;
 import net.nunnerycode.bukkit.libraries.ivory.config.IvoryYamlConfiguration;
 
 import org.apache.commons.lang.math.NumberUtils;
@@ -21,6 +22,12 @@ public final class IvorySettings {
   public static IvorySettings loadFromFiles(IvoryYamlConfiguration... yamlConfigurations) {
     IvorySettings ivorySettings = new IvorySettings();
     ivorySettings.load(yamlConfigurations);
+    return ivorySettings;
+  }
+
+  public static IvorySettings loadFromFiles(IvoryJsonConfiguration... jsonConfigurations) {
+    IvorySettings ivorySettings = new IvorySettings();
+    ivorySettings.load(jsonConfigurations);
     return ivorySettings;
   }
 
@@ -138,6 +145,28 @@ public final class IvorySettings {
           value = yc.getString(key);
         } else {
           value = yc.get(key);
+        }
+        set(name + "." + key, value);
+      }
+    }
+  }
+
+  public void load(IvoryJsonConfiguration... jsonConfigurations) {
+    if (jsonConfigurations == null) {
+      return;
+    }
+    for (IvoryJsonConfiguration jc : jsonConfigurations) {
+      String name = jc.getFileName().replace(".yml", "");
+      for (String key : jc.getKeys(true)) {
+        if (jc.isConfigurationSection(key)) {
+          continue;
+        }
+        Object value;
+        if (jc.isBoolean(key) || jc.isDouble(key) || jc.isInt(key) || jc.isLong(key) || jc
+            .isString(key)) {
+          value = jc.getString(key);
+        } else {
+          value = jc.get(key);
         }
         set(name + "." + key, value);
       }
