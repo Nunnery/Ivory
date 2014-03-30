@@ -137,7 +137,30 @@ public final class StringListUtils {
     if (strings == null || otherStrings == null) {
       throw new IllegalArgumentException("List<String> cannot be null");
     }
-    return removeIfMatches(removeColor(strings), removeColor(otherStrings));
+
+    List<String> list = new ArrayList<>(strings);
+
+    int size = otherStrings.size();
+
+    if (list.size() < size) {
+      return list;
+    }
+
+    for (int i = 0; i < list.size(); i++) {
+      if (i + size > list.size()) {
+        break;
+      }
+      List<String> subList = list.subList(i, i + size);
+      if (!equalsColorless(subList, otherStrings)) {
+        continue;
+      }
+      for (int j = size; j > 0; j--) {
+        list.remove(i + j - 1);
+      }
+      i -= i;
+    }
+
+    return list;
   }
 
   /**
