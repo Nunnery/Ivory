@@ -4,6 +4,9 @@ import org.bukkit.Bukkit;
 
 import mkremins.fanciful.IFancyMessage;
 
+/**
+ * A class that allows users to use IFancyMessage without worrying about packages and versions.
+ */
 public final class FancyMessageFactory {
 
   private static FancyMessageFactory INSTANCE;
