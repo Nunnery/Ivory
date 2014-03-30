@@ -116,6 +116,13 @@ public final class StringListUtils {
     return list;
   }
 
+  public static List<String> removeIfMatchesColorless(List<String> strings, List<String> otherStrings) {
+    if (strings == null || otherStrings == null) {
+      throw new IllegalArgumentException("List<String> cannot be null");
+    }
+    return removeIfMatches(removeColor(strings), removeColor(otherStrings));
+  }
+
   /**
    * Goes through a List and replaces the & symbol with the {@link org.bukkit.ChatColor} symbol
    * while replacing two ChatColor symbols with an &.
