@@ -123,6 +123,18 @@
             <scope>compile</scope>
         </dependency>
         <dependency>
+            <groupId>org.mcstats.bukkit</groupId>
+            <artifactId>metrics</artifactId>
+            <version>R7</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>net.gravitydevelopment.updater</groupId>
+            <artifactId>updater</artifactId>
+            <version>2.1</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>4.11</version>
@@ -156,11 +168,27 @@
                                     <include>net.nunnerycode.bukkit:ivory-*</include>
                                     <include>com.google.code.gson:gson</include>
                                     <include>com.dumptruckman.minecraft:JsonConfiguration</include>
+                                    <include>org.mcstats.bukkit:metrics</include>
+                                    <include>net.gravitydevelopment.updater:updater</include>
                                 </includes>
                                 <excludes>
                                     <excludes>net.nunnerycode.bukkit:ivory-standalone</excludes>
                                 </excludes>
                             </artifactSet>
+                            <relocations>
+                                <relocation>
+                                    <pattern>org.mcstats</pattern>
+                                    <shadedPattern>org.mcstats.ivory</shadedPattern>
+                                </relocation>
+                                <relocation>
+                                    <pattern>net.gravitydevelopment.updater</pattern>
+                                    <shadedPattern>net.gravitydevelopment.updater.ivory</shadedPattern>
+                                </relocation>
+                                <relocation>
+                                    <pattern>org.google.gson</pattern>
+                                    <shadedPattern>org.google.gson.ivory</shadedPattern>
+                                </relocation>
+                            </relocations>
                         </configuration>
                     </execution>
                 </executions>
