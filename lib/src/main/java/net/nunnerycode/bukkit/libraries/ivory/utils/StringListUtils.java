@@ -164,4 +164,15 @@ public final class StringListUtils {
     return list;
   }
 
+  public static List<String> removeColor(List<String> strings) {
+    if (strings == null) {
+      throw new IllegalArgumentException("List<String> cannot be null");
+    }
+    List<String> list = new ArrayList<>();
+    for (String s : strings) {
+      list.add(s.replace(String.valueOf('\u00A7'), ""));
+    }
+    return list;
+  }
+
 }
