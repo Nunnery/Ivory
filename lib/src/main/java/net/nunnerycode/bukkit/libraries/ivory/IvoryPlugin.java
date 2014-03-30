@@ -25,14 +25,12 @@ public abstract class IvoryPlugin extends JavaPlugin {
       }
     }
     if (isUseUpdater()) {
-      try {
-        CurseForgeQuery.BukkitProject project = new CurseForgeQuery().query(getDescription().getName());
-        if (project != null) {
-          Updater updater =
-              new Updater(this, (int) project.getId(), getFile(), Updater.UpdateType.DEFAULT, true);
-        }
-      } catch (IOException e) {
-        e.printStackTrace();
+      CurseForgeQuery.BukkitProject
+          project =
+          new CurseForgeQuery().query(getDescription().getName());
+      if (project != null) {
+        Updater updater =
+            new Updater(this, (int) project.getId(), getFile(), Updater.UpdateType.DEFAULT, true);
       }
     }
   }
