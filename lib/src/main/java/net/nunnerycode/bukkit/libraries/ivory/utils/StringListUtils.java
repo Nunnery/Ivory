@@ -125,7 +125,7 @@ public final class StringListUtils {
     }
     for (int i = 0; i < strings.size(); i++) {
       String colorlessOne = strings.get(i).replace(String.valueOf('\u00A7'), "");
-      String colorlessTwo = strings.get(i).replace(String.valueOf('\u00A7'), "");
+      String colorlessTwo = otherStrings.get(i).replace(String.valueOf('\u00A7'), "");
       if (!colorlessOne.equals(colorlessTwo)) {
         return false;
       }
