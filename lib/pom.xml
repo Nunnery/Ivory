@@ -25,6 +25,13 @@
             <type>jar</type>
         </dependency>
         <dependency>
+            <groupId>net.nunnerycode.java.libraries</groupId>
+            <artifactId>Cannonball</artifactId>
+            <version>1.0.1</version>
+            <type>jar</type>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
             <groupId>net.nunnerycode.bukkit</groupId>
             <artifactId>ivory-api</artifactId>
             <version>api</version>
@@ -170,6 +177,7 @@
                                     <include>com.dumptruckman.minecraft:JsonConfiguration</include>
                                     <include>org.mcstats.bukkit:metrics</include>
                                     <include>net.gravitydevelopment.updater:updater</include>
+                                    <include>net.nunnerycode.java.libraries:Cannonball</include>
                                 </includes>
                                 <excludes>
                                     <excludes>net.nunnerycode.bukkit:ivory-standalone</excludes>
