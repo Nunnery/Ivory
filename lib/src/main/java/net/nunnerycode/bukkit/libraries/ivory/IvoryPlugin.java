@@ -2,23 +2,39 @@ package net.nunnerycode.bukkit.libraries.ivory;
 
 import net.gravitydevelopment.updater.Updater;
 import net.nunnerycode.bukkit.libraries.ivory.query.CurseForgeQuery;
+import net.nunnerycode.java.libraries.cannonball.DebugPrinter;
 
 import org.bukkit.plugin.java.JavaPlugin;
 import org.mcstats.Metrics;
 
 import java.io.IOException;
+import java.util.logging.Level;
 
 public abstract class IvoryPlugin extends JavaPlugin {
 
   private boolean useMetrics;
   private boolean useUpdater;
+  private Metrics metrics;
+  private Updater updater;
+  private DebugPrinter debugPrinter;
+
+  public Metrics getMetrics() {
+    return metrics;
+  }
+
+  public final void debug(Level level, String... messages) {
+    if (debugPrinter != null) {
+      debugPrinter.debug(level, messages);
+    }
+  }
 
   @Override
   public final void onEnable() {
+    debugPrinter = new DebugPrinter(getDataFolder().getPath(), "debug.log");
     enable();
     if (isUseMetrics()) {
       try {
-        Metrics metrics = new Metrics(this);
+        metrics = new Metrics(this);
         metrics.start();
       } catch (IOException e) {
         e.printStackTrace();
@@ -29,7 +45,7 @@ public abstract class IvoryPlugin extends JavaPlugin {
           project =
           new CurseForgeQuery().query(getDescription().getName());
       if (project != null) {
-        Updater updater =
+        updater =
             new Updater(this, (int) project.getId(), getFile(), Updater.UpdateType.DEFAULT, true);
       }
     }
@@ -60,4 +76,11 @@ public abstract class IvoryPlugin extends JavaPlugin {
 
   public abstract void disable();
 
+  public Updater getUpdater() {
+    return updater;
+  }
+
+  public DebugPrinter getDebugPrinter() {
+    return debugPrinter;
+  }
 }
