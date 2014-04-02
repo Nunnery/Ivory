@@ -124,6 +124,10 @@ public final class ItemStackBuilder {
   }
 
   public ItemStackBuilder withPotionEffects(Set<PotionEffect> effects) {
+    if (effects == null) {
+      this.potionEffects = new HashSet<>();
+      return this;
+    }
     this.potionEffects = effects;
     return this;
   }
