@@ -16,7 +16,9 @@ public class IvoryJsonConfiguration extends JsonConfiguration implements IvoryCo
   private File file;
 
   public IvoryJsonConfiguration(File file) {
+    super();
     this.file = file;
+    load();
   }
 
   public static JsonConfiguration loadConfiguration(InputStream stream) {
@@ -38,7 +40,7 @@ public class IvoryJsonConfiguration extends JsonConfiguration implements IvoryCo
     try {
       load(file);
     } catch (InvalidConfigurationException | IOException e) {
-      e.printStackTrace();
+      // do nothing
     }
   }
 
@@ -47,7 +49,7 @@ public class IvoryJsonConfiguration extends JsonConfiguration implements IvoryCo
     try {
       save(file);
     } catch (IOException e) {
-      e.printStackTrace();
+      // do nothing
     }
   }
 
