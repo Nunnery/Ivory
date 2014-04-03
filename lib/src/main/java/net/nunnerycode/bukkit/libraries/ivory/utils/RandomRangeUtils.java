@@ -20,7 +20,7 @@ public final class RandomRangeUtils {
   public static long randomRangeLongExclusive(long value1, long value2) {
     long max = Math.max(value1, value2);
     long min = Math.min(value1, value2);
-    long value = min + (long) (RANDOM.nextDouble() * (max - min));
+    long value = min + Math.round(RANDOM.nextDouble() * (max - min));
     return Math.min(Math.max(value, min), max - 1);
   }
 
@@ -34,7 +34,7 @@ public final class RandomRangeUtils {
   public static long randomRangeLongInclusive(long value1, long value2) {
     long max = Math.max(value1, value2);
     long min = Math.min(value1, value2);
-    long value = min + (long) (RANDOM.nextDouble() * (max - min + 1));
+    long value = min + Math.round(RANDOM.nextDouble() * (max - min + 1));
     return Math.min(Math.max(value, min), max);
   }
 
