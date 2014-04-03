@@ -2,6 +2,7 @@ package org.nunnerycode.bukkit.ivory.v_1_7_R1;
 
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Projectile;
+import org.bukkit.projectiles.ProjectileSource;
 import org.nunnerycode.bukkit.ivory.IProjectileWrapper;
 
 public final class ProjectileWrapper implements IProjectileWrapper {
@@ -11,7 +12,11 @@ public final class ProjectileWrapper implements IProjectileWrapper {
     if (projectile == null) {
       return null;
     }
-    return projectile.getShooter();
+    ProjectileSource projectileSource = projectile.getShooter();
+    if (!(projectileSource instanceof LivingEntity)) {
+      return null;
+    }
+    return (LivingEntity) projectileSource;
   }
 
 }
