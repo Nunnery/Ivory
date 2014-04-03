@@ -63,7 +63,7 @@ public final class FancyMessageFactory {
     if (pkg.equals("org.bukkit.craftbukkit.v1_4_5")) {
       return new mkremins.fanciful.v_1_4_5.FancyMessage("");
     }
-    return null;
+    throw new RuntimeException("Not running a supported version of Bukkit");
   }
 
 }
