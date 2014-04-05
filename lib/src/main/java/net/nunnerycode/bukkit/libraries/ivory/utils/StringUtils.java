@@ -24,4 +24,15 @@ public final class StringUtils {
     return s;
   }
 
+  public static String colorString(String string) {
+    return colorString(string, '&');
+  }
+
+  public static String colorString(String string, char c) {
+    if (string == null) {
+      throw new IllegalArgumentException("String cannot be null");
+    }
+    return string.replace(c, '\u00A7').replace("\u00A7\u00A7", String.valueOf(c));
+  }
+
 }
