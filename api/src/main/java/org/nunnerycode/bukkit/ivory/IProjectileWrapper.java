@@ -5,6 +5,6 @@ import org.bukkit.entity.Projectile;
 
 public interface IProjectileWrapper {
 
-  LivingEntity getShooter(Projectile projectile);
+    LivingEntity getShooter(Projectile projectile);
 
 }

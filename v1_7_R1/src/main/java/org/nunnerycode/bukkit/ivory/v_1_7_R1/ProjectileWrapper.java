@@ -7,16 +7,16 @@ import org.nunnerycode.bukkit.ivory.IProjectileWrapper;
 
 public final class ProjectileWrapper implements IProjectileWrapper {
 
-  @Override
-  public LivingEntity getShooter(Projectile projectile) {
-    if (projectile == null) {
-      return null;
+    @Override
+    public LivingEntity getShooter(Projectile projectile) {
+        if (projectile == null) {
+            return null;
+        }
+        ProjectileSource projectileSource = projectile.getShooter();
+        if (!(projectileSource instanceof LivingEntity)) {
+            return null;
+        }
+        return (LivingEntity) projectileSource;
     }
-    ProjectileSource projectileSource = projectile.getShooter();
-    if (!(projectileSource instanceof LivingEntity)) {
-      return null;
-    }
-    return (LivingEntity) projectileSource;
-  }
 
 }

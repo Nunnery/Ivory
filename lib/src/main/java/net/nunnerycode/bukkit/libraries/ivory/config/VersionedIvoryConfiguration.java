@@ -2,16 +2,16 @@ package net.nunnerycode.bukkit.libraries.ivory.config;
 
 public interface VersionedIvoryConfiguration {
 
-  String getVersion();
+    String getVersion();
 
-  String getLocalVersion();
+    String getLocalVersion();
 
-  boolean needsToUpdate();
+    boolean needsToUpdate();
 
-  boolean update();
+    boolean update();
 
-  public static enum VersionUpdateType {
-    BACKUP_NO_UPDATE, BACKUP_AND_UPDATE, BACKUP_AND_NEW, NOTHING
-  }
+    public static enum VersionUpdateType {
+        BACKUP_NO_UPDATE, BACKUP_AND_UPDATE, BACKUP_AND_NEW, NOTHING
+    }
 
 }

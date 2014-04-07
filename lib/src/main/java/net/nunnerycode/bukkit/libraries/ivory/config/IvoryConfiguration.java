@@ -4,12 +4,12 @@ import java.io.File;
 
 public interface IvoryConfiguration {
 
-  void load();
+    void load();
 
-  void save();
+    void save();
 
-  File getFile();
+    File getFile();
 
-  String getFileName();
+    String getFileName();
 
 }
