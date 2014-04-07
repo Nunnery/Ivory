@@ -10,26 +10,35 @@ import java.util.Map;
 
 public final class ProjectileWrapperUtils {
 
-  private ProjectileWrapperUtils() {
-    // do nothing
-  }
-
   private static final Map<String, IProjectileWrapper> projectileWrapperMap;
-
   static {
     projectileWrapperMap = new HashMap<>();
-    projectileWrapperMap.put("org.bukkit.craftbukkit.v1_7_R2", new org.nunnerycode.bukkit.ivory.v_1_7_R2.ProjectileWrapper());
-    projectileWrapperMap.put("org.bukkit.craftbukkit.v1_7_R1", new org.nunnerycode.bukkit.ivory.v_1_7_R1.ProjectileWrapper());
+    projectileWrapperMap.put("org.bukkit.craftbukkit.v1_7_R2",
+                             new org.nunnerycode.bukkit.ivory.v_1_7_R2.ProjectileWrapper());
+    projectileWrapperMap.put("org.bukkit.craftbukkit.v1_7_R1",
+                             new org.nunnerycode.bukkit.ivory.v_1_7_R1.ProjectileWrapper());
     projectileWrapperMap.put("org.bukkit.craftbukkit.v1_6_R3",
                              new org.nunnerycode.bukkit.ivory.v_1_6_R3.ProjectileWrapper());
-    projectileWrapperMap.put("org.bukkit.craftbukkit.v1_6_R2", new org.nunnerycode.bukkit.ivory.v_1_6_R2.ProjectileWrapper());
-    projectileWrapperMap.put("org.bukkit.craftbukkit.v1_6_R1", new org.nunnerycode.bukkit.ivory.v_1_6_R1.ProjectileWrapper());
-    projectileWrapperMap.put("org.bukkit.craftbukkit.v1_5_R3", new org.nunnerycode.bukkit.ivory.v_1_5_R3.ProjectileWrapper());
-    projectileWrapperMap.put("org.bukkit.craftbukkit.v1_5_R2", new org.nunnerycode.bukkit.ivory.v_1_5_R2.ProjectileWrapper());
-    projectileWrapperMap.put("org.bukkit.craftbukkit.v1_5_R1", new org.nunnerycode.bukkit.ivory.v_1_5_R1.ProjectileWrapper());
-    projectileWrapperMap.put("org.bukkit.craftbukkit.v1_4_R1", new org.nunnerycode.bukkit.ivory.v_1_4_R1.ProjectileWrapper());
-    projectileWrapperMap.put("org.bukkit.craftbukkit.v1_4_6", new org.nunnerycode.bukkit.ivory.v_1_4_6.ProjectileWrapper());
-    projectileWrapperMap.put("org.bukkit.craftbukkit.v1_4_5", new org.nunnerycode.bukkit.ivory.v_1_4_5.ProjectileWrapper());
+    projectileWrapperMap.put("org.bukkit.craftbukkit.v1_6_R2",
+                             new org.nunnerycode.bukkit.ivory.v_1_6_R2.ProjectileWrapper());
+    projectileWrapperMap.put("org.bukkit.craftbukkit.v1_6_R1",
+                             new org.nunnerycode.bukkit.ivory.v_1_6_R1.ProjectileWrapper());
+    projectileWrapperMap.put("org.bukkit.craftbukkit.v1_5_R3",
+                             new org.nunnerycode.bukkit.ivory.v_1_5_R3.ProjectileWrapper());
+    projectileWrapperMap.put("org.bukkit.craftbukkit.v1_5_R2",
+                             new org.nunnerycode.bukkit.ivory.v_1_5_R2.ProjectileWrapper());
+    projectileWrapperMap.put("org.bukkit.craftbukkit.v1_5_R1",
+                             new org.nunnerycode.bukkit.ivory.v_1_5_R1.ProjectileWrapper());
+    projectileWrapperMap.put("org.bukkit.craftbukkit.v1_4_R1",
+                             new org.nunnerycode.bukkit.ivory.v_1_4_R1.ProjectileWrapper());
+    projectileWrapperMap.put("org.bukkit.craftbukkit.v1_4_6",
+                             new org.nunnerycode.bukkit.ivory.v_1_4_6.ProjectileWrapper());
+    projectileWrapperMap.put("org.bukkit.craftbukkit.v1_4_5",
+                             new org.nunnerycode.bukkit.ivory.v_1_4_5.ProjectileWrapper());
+  }
+
+  private ProjectileWrapperUtils() {
+    // do nothing
   }
 
   public static LivingEntity getShooter(Projectile projectile) {

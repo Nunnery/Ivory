@@ -133,7 +133,8 @@ public final class StringListUtils {
     return true;
   }
 
-  public static List<String> removeIfMatchesColorless(List<String> strings, List<String> otherStrings) {
+  public static List<String> removeIfMatchesColorless(List<String> strings,
+                                                      List<String> otherStrings) {
     if (strings == null || otherStrings == null) {
       throw new IllegalArgumentException("List<String> cannot be null");
     }

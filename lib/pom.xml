@@ -190,7 +190,8 @@
                                 </relocation>
                                 <relocation>
                                     <pattern>net.gravitydevelopment.updater</pattern>
-                                    <shadedPattern>net.gravitydevelopment.updater.ivory</shadedPattern>
+                                    <shadedPattern>net.gravitydevelopment.updater.ivory
+                                    </shadedPattern>
                                 </relocation>
                                 <relocation>
                                     <pattern>org.google.gson</pattern>

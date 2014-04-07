@@ -155,7 +155,8 @@ public final class ItemStackBuilder {
       }
     } else if (itemMeta instanceof EnchantmentStorageMeta) {
       for (Map.Entry<Enchantment, Integer> entry : enchantmentIntegerMap.entrySet()) {
-        ((EnchantmentStorageMeta) itemMeta).addStoredEnchant(entry.getKey(), entry.getValue(), true);
+        ((EnchantmentStorageMeta) itemMeta)
+            .addStoredEnchant(entry.getKey(), entry.getValue(), true);
       }
     } else if (itemMeta instanceof FireworkEffectMeta) {
       ((FireworkEffectMeta) itemMeta).setEffect(fireworkEffect);

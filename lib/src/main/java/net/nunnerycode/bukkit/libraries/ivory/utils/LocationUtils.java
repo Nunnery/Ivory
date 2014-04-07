@@ -7,7 +7,7 @@ public final class LocationUtils {
   private LocationUtils() {
     // do nothing
   }
-  
+
   public static boolean isLocationBetween(Location loc1, Location loc2, Location locToTest) {
     if (loc1 == null || loc2 == null || locToTest == null) {
       throw new IllegalArgumentException("Location cannot be null");
