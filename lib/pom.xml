@@ -142,6 +142,11 @@
             <scope>compile</scope>
         </dependency>
         <dependency>
+            <groupId>com.dsh105</groupId>
+            <artifactId>HoloAPI</artifactId>
+            <version>1.2.0</version>
+        </dependency>
+        <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>4.11</version>
@@ -196,6 +201,10 @@
                                 <relocation>
                                     <pattern>org.google.gson</pattern>
                                     <shadedPattern>org.google.gson.ivory</shadedPattern>
+                                </relocation>
+                                <relocation>
+                                    <pattern>com.dsh105</pattern>
+                                    <shadedPattern>com.dsh105.ivory</shadedPattern>
                                 </relocation>
                             </relocations>
                         </configuration>
