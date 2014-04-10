@@ -1,6 +1,5 @@
 package net.nunnerycode.bukkit.libraries.ivory.query;
 
-import org.bukkit.Bukkit;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.JSONValue;
@@ -55,7 +54,7 @@ public final class CurseForgeQuery {
                 return new BukkitProject(id, projectName, slug, projectStage);
             }
         } catch (IOException e) {
-            Bukkit.getLogger().info("Could not query CurseForge when looking for: " + name);
+            e.printStackTrace();
         } finally {
             try {
                 if (reader != null) {
