@@ -30,6 +30,9 @@ public final class FancyMessageFactory {
      */
     public IFancyMessage getNewFancyMessage() {
         String pkg = Bukkit.getServer().getClass().getPackage().getName();
+        if (pkg.equals("org.bukkit.craftbukkit.v1_7_R3")) {
+            return new mkremins.fanciful.v_1_7_R3.FancyMessage("");
+        }
         if (pkg.equals("org.bukkit.craftbukkit.v1_7_R2")) {
             return new mkremins.fanciful.v_1_7_R2.FancyMessage("");
         }
