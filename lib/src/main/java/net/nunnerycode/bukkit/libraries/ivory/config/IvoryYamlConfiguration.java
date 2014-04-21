@@ -37,8 +37,9 @@ public class IvoryYamlConfiguration extends YamlConfiguration implements IvoryCo
     }
 
     /**
-     * Loads from the file passed into the constructor. </br> Equivalent of using {@link #load(java.io.File)} on a
-     * {@link java.io.File}.
+     * Loads from the file passed into the constructor.
+     *
+     * Equivalent of using {@link #load(java.io.File)} on a {@link java.io.File}.
      */
     @Override
     public void load() {
@@ -50,8 +51,9 @@ public class IvoryYamlConfiguration extends YamlConfiguration implements IvoryCo
     }
 
     /**
-     * Saves to the file passed into the constructor. </br> Equivalent of using {@link #save(java.io.File)} on a {@link
-     * java.io.File}.
+     * Saves to the file passed into the constructor.
+     *
+     * Equivalent of using {@link #save(java.io.File)} on a {@link java.io.File}.
      */
     @Override
     public void save() {
