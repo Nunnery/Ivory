@@ -14,6 +14,8 @@ public final class ProjectileWrapperUtils {
 
     static {
         projectileWrapperMap = new HashMap<>();
+        projectileWrapperMap.put("org.bukkit.craftbukkit.v1_7_R3",
+                new org.nunnerycode.bukkit.ivory.v_1_7_R3.ProjectileWrapper());
         projectileWrapperMap.put("org.bukkit.craftbukkit.v1_7_R2",
                 new org.nunnerycode.bukkit.ivory.v_1_7_R2.ProjectileWrapper());
         projectileWrapperMap.put("org.bukkit.craftbukkit.v1_7_R1",
