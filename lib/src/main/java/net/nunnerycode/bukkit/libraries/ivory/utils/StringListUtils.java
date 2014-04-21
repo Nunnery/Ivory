@@ -165,10 +165,11 @@ public final class StringListUtils {
     }
 
     /**
-     * Goes through a List and replaces the & symbol with the {@link org.bukkit.ChatColor} symbol while replacing two
-     * ChatColor symbols with an &.
+     * Goes through a List and replaces a specified character with the {@link org.bukkit.ChatColor} symbol while
+     * replacing two ChatColor symbols with a specified character.
      *
      * @param strings List of Strings
+     * @param symbol  character to replace color codes with
      * @return colored List
      */
     public static List<String> colorList(List<String> strings, char symbol) {

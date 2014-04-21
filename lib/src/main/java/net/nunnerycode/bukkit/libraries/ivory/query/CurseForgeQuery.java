@@ -75,8 +75,9 @@ public final class CurseForgeQuery {
     }
 
     /**
-     * A simple class to hold data about a project on BukkitDev. </p> Creating a new BukkitProject will not create a new
-     * project on BukkitDev.
+     * A simple class to hold data about a project on BukkitDev.
+     *
+     * Creating a new BukkitProject will not create a new project on BukkitDev.
      */
     public static class BukkitProject {
 

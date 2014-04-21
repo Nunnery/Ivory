@@ -22,8 +22,9 @@ public final class FancyMessageFactory {
     }
 
     /**
-     * Creates a new {@link mkremins.fanciful.IFancyMessage} for use. </br> Returns null if using a package that's not
-     * recognized.
+     * Creates a new {@link mkremins.fanciful.IFancyMessage} for use.
+     *
+     * Returns null if using a package that's not recognized.
      *
      * @return new IFancyMessage
      */

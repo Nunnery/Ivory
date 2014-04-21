@@ -46,6 +46,7 @@ public class VersionedIvoryYamlConfiguration extends IvoryYamlConfiguration
      * {@link java.io.File} to check against, and an {@link net.nunnerycode.bukkit.libraries.ivory.config.VersionedIvoryYamlConfiguration.VersionUpdateType}.
      *
      * @param file         file to load/save from/to
+     * @param separator    character to separate file sections on
      * @param checkAgainst file to check against
      * @param updateType   type of updating
      */
@@ -63,6 +64,7 @@ public class VersionedIvoryYamlConfiguration extends IvoryYamlConfiguration
      * {@link java.io.InputStream} to check against, and an {@link net.nunnerycode.bukkit.libraries.ivory.config.VersionedIvoryYamlConfiguration.VersionUpdateType}.
      *
      * @param file         file to load/save from/to
+     * @param separator    character to separate file sections on
      * @param checkAgainst resource to check against
      * @param updateType   type of updating
      */
