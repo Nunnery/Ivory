@@ -1,33 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xmlns="http://maven.apache.org/POM/4.0.0"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
+	xmlns="http://maven.apache.org/POM/4.0.0"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
 
-    <parent>
-        <groupId>net.nunnerycode.bukkit</groupId>
-        <artifactId>ivory-parent</artifactId>
-        <version>parent</version>
-    </parent>
+	<parent>
+		<groupId>net.nunnerycode.bukkit</groupId>
+		<artifactId>ivory-parent</artifactId>
+		<version>parent</version>
+	</parent>
 
-    <artifactId>ivory-v1_4_R1</artifactId>
-    <version>v1_4_R1</version>
-    <packaging>jar</packaging>
+	<artifactId>ivory-v1_4_R1</artifactId>
+	<version>v1_4_R1</version>
+	<packaging>jar</packaging>
 
-    <name>Ivory NMS/OBS v1_4_R1</name>
-    <description>Classes using NMS/OBS from v1_4_R1</description>
+	<name>Ivory NMS/OBS v1_4_R1</name>
+	<description>Classes using NMS/OBS from v1_4_R1</description>
 
-    <dependencies>
-        <dependency>
-            <groupId>org.bukkit</groupId>
-            <artifactId>craftbukkit</artifactId>
-            <version>1.4.7-R0.1</version>
-        </dependency>
-        <dependency>
-            <groupId>net.nunnerycode.bukkit</groupId>
-            <artifactId>ivory-api</artifactId>
-            <version>api</version>
-        </dependency>
-    </dependencies>
+	<dependencies>
+		<dependency>
+			<groupId>org.bukkit</groupId>
+			<artifactId>craftbukkit</artifactId>
+			<version>1.4.7-R0.1</version>
+		</dependency>
+		<dependency>
+			<groupId>net.nunnerycode.bukkit</groupId>
+			<artifactId>ivory-api</artifactId>
+			<version>api</version>
+		</dependency>
+	</dependencies>
 
 </project>

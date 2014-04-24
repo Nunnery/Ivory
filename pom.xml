@@ -1,84 +1,88 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xmlns="http://maven.apache.org/POM/4.0.0"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
+	xmlns="http://maven.apache.org/POM/4.0.0"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
 
-    <groupId>net.nunnerycode.bukkit</groupId>
-    <artifactId>ivory-parent</artifactId>
-    <version>parent</version>
-    <packaging>pom</packaging>
+	<groupId>net.nunnerycode.bukkit</groupId>
+	<artifactId>ivory-parent</artifactId>
+	<version>parent</version>
+	<packaging>pom</packaging>
 
-    <name>Ivory-Parent</name>
-    <description>A library of useful tools for Bukkit development.</description>
+	<name>Ivory-Parent</name>
+	<description>A library of useful tools for Bukkit development.</description>
 
-    <prerequisites>
-        <maven>3.0</maven>
-    </prerequisites>
+	<prerequisites>
+		<maven>3.0</maven>
+	</prerequisites>
 
-    <modules>
-        <module>api</module>
-        <module>lib</module>
-        <module>v1_4_5</module>
-        <module>v1_4_6</module>
-        <module>v1_4_R1</module>
-        <module>v1_5_R1</module>
-        <module>v1_5_R2</module>
-        <module>v1_5_R3</module>
-        <module>v1_6_R1</module>
-        <module>v1_6_R2</module>
-        <module>v1_6_R3</module>
-        <module>v1_7_R1</module>
-        <module>v1_7_R2</module>
-        <module>v1_7_R3</module>
-        <module>plugin</module>
-    </modules>
+	<modules>
+		<module>api</module>
+		<module>lib</module>
+		<module>v1_4_5</module>
+		<module>v1_4_6</module>
+		<module>v1_4_R1</module>
+		<module>v1_5_R1</module>
+		<module>v1_5_R2</module>
+		<module>v1_5_R3</module>
+		<module>v1_6_R1</module>
+		<module>v1_6_R2</module>
+		<module>v1_6_R3</module>
+		<module>v1_7_R1</module>
+		<module>v1_7_R2</module>
+		<module>v1_7_R3</module>
+		<module>plugin</module>
+	</modules>
 
-    <developers>
-        <developer>
-            <id>ToppleTheNun</id>
-            <name>Richard Harrah</name>
-            <roles>
-                <role>author</role>
-            </roles>
-        </developer>
-    </developers>
+	<developers>
+		<developer>
+			<id>ToppleTheNun</id>
+			<name>Richard Harrah</name>
+			<roles>
+				<role>author</role>
+			</roles>
+		</developer>
+	</developers>
 
-    <repositories>
-        <repository>
-            <id>bukkit-repo</id>
-            <name>Bukkit Repository</name>
-            <url>http://repo.bukkit.org/content/groups/public/</url>
-        </repository>
-        <repository>
-            <id>vault-repo</id>
-            <name>The Yeti Cave Repository</name>
-            <url>http://nexus.theyeticave.net/content/repositories/pub_releases</url>
-        </repository>
-        <repository>
-            <id>nunnerycode-repo</id>
-            <url>http://repository-topplethenun.forge.cloudbees.com/snapshot/</url>
-            <snapshots>
-                <enabled>true</enabled>
-                <updatePolicy>always</updatePolicy>
-            </snapshots>
-        </repository>
-        <repository>
-            <id>gravity-repo</id>
-            <url>http://repo.gravitydevelopment.net</url>
-        </repository>
-        <repository>
-            <id>Plugin Metrics</id>
-            <url>http://repo.mcstats.org/content/repositories/public</url>
-        </repository>
-        <repository>
-            <id>hawk-repo</id>
-            <url>http://ci.hawkfalcon.com/plugin/repository/everything/</url>
-        </repository>
-    </repositories>
+	<repositories>
+		<repository>
+			<id>bukkit-repo</id>
+			<name>Bukkit Repository</name>
+			<url>http://repo.bukkit.org/content/groups/public/</url>
+		</repository>
+		<repository>
+			<id>vault-repo</id>
+			<name>The Yeti Cave Repository</name>
+			<url>http://nexus.theyeticave.net/content/repositories/pub_releases</url>
+		</repository>
+		<repository>
+			<id>nunnerycode-repo</id>
+			<url>http://repository-topplethenun.forge.cloudbees.com/snapshot/</url>
+			<snapshots>
+				<enabled>true</enabled>
+				<updatePolicy>always</updatePolicy>
+			</snapshots>
+		</repository>
+		<repository>
+			<id>gravity-repo</id>
+			<url>http://repo.gravitydevelopment.net</url>
+		</repository>
+		<repository>
+			<id>Plugin Metrics</id>
+			<url>http://repo.mcstats.org/content/repositories/public</url>
+		</repository>
+		<repository>
+			<id>hawk-repo</id>
+			<url>http://ci.hawkfalcon.com/plugin/repository/everything/</url>
+		</repository>
+	</repositories>
 
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    </properties>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+	
+	<build>
+		<defaultGoal>clean package</defaultGoal>
+	</build>
 
 </project>
