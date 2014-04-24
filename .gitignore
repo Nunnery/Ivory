@@ -9,6 +9,7 @@ maven-build.xml
 maven-build.properties
 dependency-reduced-pom.xml
 /target
+*/target
 /dist
 *.eml
 *.iml
