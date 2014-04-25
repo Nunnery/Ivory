@@ -79,8 +79,8 @@ public final class StringListUtils {
     }
 
     /**
-     * Removes a {@link java.util.List} of {@link java.lang.String}s from a {@link java.util.List} of {@link java
-     * .lang.String}s, but only if it matches exactly.
+     * Removes a {@link java.util.List} of {@link java.lang.String}s from a {@link java.util.List} of
+     * {@link java.lang.String}s, but only if it matches exactly.
      *
      * @param strings      List from which to remove
      * @param otherStrings Strings to match in order to remove
