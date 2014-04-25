@@ -29,44 +29,7 @@ public final class FancyMessageFactory {
      * @return new IFancyMessage
      */
     public IFancyMessage getNewFancyMessage() {
-        String pkg = Bukkit.getServer().getClass().getPackage().getName();
-        if (pkg.equals("org.bukkit.craftbukkit.v1_7_R3")) {
-            return new mkremins.fanciful.v_1_7_R3.FancyMessage("");
-        }
-        if (pkg.equals("org.bukkit.craftbukkit.v1_7_R2")) {
-            return new mkremins.fanciful.v_1_7_R2.FancyMessage("");
-        }
-        if (pkg.equals("org.bukkit.craftbukkit.v1_7_R1")) {
-            return new mkremins.fanciful.v_1_7_R1.FancyMessage("");
-        }
-        if (pkg.equals("org.bukkit.craftbukkit.v1_6_R3")) {
-            return new mkremins.fanciful.v_1_6_R3.FancyMessage("");
-        }
-        if (pkg.equals("org.bukkit.craftbukkit.v1_6_R2")) {
-            return new mkremins.fanciful.v_1_6_R2.FancyMessage("");
-        }
-        if (pkg.equals("org.bukkit.craftbukkit.v1_6_R1")) {
-            return new mkremins.fanciful.v_1_6_R1.FancyMessage("");
-        }
-        if (pkg.equals("org.bukkit.craftbukkit.v1_5_R3")) {
-            return new mkremins.fanciful.v_1_5_R3.FancyMessage("");
-        }
-        if (pkg.equals("org.bukkit.craftbukkit.v1_5_R2")) {
-            return new mkremins.fanciful.v_1_5_R2.FancyMessage("");
-        }
-        if (pkg.equals("org.bukkit.craftbukkit.v1_5_R1")) {
-            return new mkremins.fanciful.v_1_5_R1.FancyMessage("");
-        }
-        if (pkg.equals("org.bukkit.craftbukkit.v1_4_R1")) {
-            return new mkremins.fanciful.v_1_4_R1.FancyMessage("");
-        }
-        if (pkg.equals("org.bukkit.craftbukkit.v1_4_6")) {
-            return new mkremins.fanciful.v_1_4_6.FancyMessage("");
-        }
-        if (pkg.equals("org.bukkit.craftbukkit.v1_4_5")) {
-            return new mkremins.fanciful.v_1_4_5.FancyMessage("");
-        }
-        throw new RuntimeException("Not running a supported version of Bukkit");
+        return new IFancyMessage();
     }
 
 }
