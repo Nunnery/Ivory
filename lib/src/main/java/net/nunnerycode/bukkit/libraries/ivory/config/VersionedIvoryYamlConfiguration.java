@@ -17,7 +17,7 @@ public class VersionedIvoryYamlConfiguration extends IvoryYamlConfiguration
 
     /**
      * Instantiates a new VersionedIvoryYamlConfiguration with a selected {@link java.io.File} to load/save from/to, a
-     * {@link java.io.File} to check against, and an {@link net.nunnerycode.bukkit.libraries.ivory.config.VersionedIvoryYamlConfiguration.VersionUpdateType}.
+     * {@link java.io.File} to check against, and an {@link net.nunnerycode.bukkit.libraries.ivory.config.VersionedIvoryConfiguration.VersionUpdateType}.
      *
      * @param file         file to load/save from/to
      * @param checkAgainst file to check against
@@ -30,7 +30,7 @@ public class VersionedIvoryYamlConfiguration extends IvoryYamlConfiguration
 
     /**
      * Instantiates a new VersionedIvoryYamlConfiguration with a selected {@link java.io.File} to load/save from/to, a
-     * {@link java.io.InputStream} to check against, and an {@link net.nunnerycode.bukkit.libraries.ivory.config.VersionedIvoryYamlConfiguration.VersionUpdateType}.
+     * {@link java.io.InputStream} to check against, and an {@link net.nunnerycode.bukkit.libraries.ivory.config.VersionedIvoryConfiguration.VersionUpdateType}.
      *
      * @param file         file to load/save from/to
      * @param checkAgainst resource to check against
@@ -43,7 +43,7 @@ public class VersionedIvoryYamlConfiguration extends IvoryYamlConfiguration
 
     /**
      * Instantiates a new VersionedIvoryYamlConfiguration with a selected {@link java.io.File} to load/save from/to, a
-     * {@link java.io.File} to check against, and an {@link net.nunnerycode.bukkit.libraries.ivory.config.VersionedIvoryYamlConfiguration.VersionUpdateType}.
+     * {@link java.io.File} to check against, and an {@link net.nunnerycode.bukkit.libraries.ivory.config.VersionedIvoryConfiguration.VersionUpdateType}.
      *
      * @param file         file to load/save from/to
      * @param separator    character to separate file sections on
@@ -61,7 +61,7 @@ public class VersionedIvoryYamlConfiguration extends IvoryYamlConfiguration
 
     /**
      * Instantiates a new VersionedIvoryYamlConfiguration with a selected {@link java.io.File} to load/save from/to, a
-     * {@link java.io.InputStream} to check against, and an {@link net.nunnerycode.bukkit.libraries.ivory.config.VersionedIvoryYamlConfiguration.VersionUpdateType}.
+     * {@link java.io.InputStream} to check against, and an {@link net.nunnerycode.bukkit.libraries.ivory.config.VersionedIvoryConfiguration.VersionUpdateType}.
      *
      * @param file         file to load/save from/to
      * @param separator    character to separate file sections on

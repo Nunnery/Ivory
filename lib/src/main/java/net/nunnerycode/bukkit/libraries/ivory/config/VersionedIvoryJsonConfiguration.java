@@ -16,7 +16,7 @@ public class VersionedIvoryJsonConfiguration extends IvoryJsonConfiguration
 
     /**
      * Instantiates a new VersionedIvoryJsonConfiguration with a selected {@link java.io.File} to load/save from/to, a
-     * {@link java.io.File} to check against, and an {@link net.nunnerycode.bukkit.libraries.ivory.config.VersionedIvoryJsonConfiguration.VersionUpdateType}.
+     * {@link java.io.File} to check against, and an {@link net.nunnerycode.bukkit.libraries.ivory.config.VersionedIvoryConfiguration.VersionUpdateType}.
      *
      * @param file         file to load/save from/to
      * @param checkAgainst file to check against
@@ -33,7 +33,7 @@ public class VersionedIvoryJsonConfiguration extends IvoryJsonConfiguration
 
     /**
      * Instantiates a new VersionedIvoryJsonConfiguration with a selected {@link java.io.File} to load/save from/to, a
-     * {@link java.io.InputStream} to check against, and an {@link net.nunnerycode.bukkit.libraries.ivory.config.VersionedIvoryJsonConfiguration.VersionUpdateType}.
+     * {@link java.io.InputStream} to check against, and an {@link net.nunnerycode.bukkit.libraries.ivory.config.VersionedIvoryConfiguration.VersionUpdateType}.
      *
      * @param file         file to load/save from/to
      * @param checkAgainst resource to check against
