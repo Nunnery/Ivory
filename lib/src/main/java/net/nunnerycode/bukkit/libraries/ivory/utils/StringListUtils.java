@@ -187,6 +187,9 @@ public final class StringListUtils {
 
     public static List<String> replaceWithList(List<String> containingList, String key,
                                                List<String> list) {
+        if (containingList == null) {
+            throw new IllegalArgumentException("List<String> cannot be null");
+        }
         if (key == null) {
             throw new IllegalArgumentException("String cannot be null");
         }
