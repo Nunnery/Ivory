@@ -193,6 +193,7 @@
 									<include>org.mcstats.bukkit:metrics</include>
 									<include>net.gravitydevelopment.updater:updater</include>
 									<include>net.nunnerycode.java.libraries:Cannonball</include>
+                                    <include>mkremins:fanciful</include>
 								</includes>
 								<excludes>
 									<excludes>net.nunnerycode.bukkit:ivory-standalone</excludes>
