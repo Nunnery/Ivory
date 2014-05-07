@@ -1,4 +1,0 @@
-main: net.nunnerycode.bukkit.ivoryplug.IvoryPlugin
-name: IvoryPlugin
-version: ${project.version}
-author: ToppleTheNun
