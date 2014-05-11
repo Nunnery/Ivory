@@ -213,10 +213,6 @@
 									<pattern>org.google.gson</pattern>
 									<shadedPattern>org.google.gson.ivory</shadedPattern>
 								</relocation>
-								<relocation>
-									<pattern>com.dsh105</pattern>
-									<shadedPattern>com.dsh105.ivory</shadedPattern>
-								</relocation>
 							</relocations>
 						</configuration>
 					</execution>
