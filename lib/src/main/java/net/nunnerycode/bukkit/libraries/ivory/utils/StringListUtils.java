@@ -185,6 +185,10 @@ public final class StringListUtils {
         return list;
     }
 
+    public static List<String> colorList(List<String> strings) {
+        return colorList(strings, '&');
+    }
+
     public static List<String> replaceWithList(List<String> containingList, String key,
                                                List<String> list) {
         if (containingList == null) {
