@@ -51,7 +51,7 @@ public final class ProjectileWrapperUtils {
         String pkg = Bukkit.getServer().getClass().getPackage().getName();
         IProjectileWrapper wrapper = projectileWrapperMap.get(pkg);
         if (wrapper == null) {
-            throw new RuntimeException("Not running on a supported version of Bukkit");
+            wrapper = projectileWrapperMap.get("org.bukkit.craftbukkit.v1_7_R3");
         }
         return wrapper.getShooter(projectile);
     }
