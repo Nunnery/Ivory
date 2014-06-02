@@ -1,6 +1,9 @@
 package net.nunnerycode.bukkit.libraries.ivory.utils;
 
+import org.apache.commons.lang.math.NumberUtils;
+import org.bukkit.Bukkit;
 import org.bukkit.Location;
+import org.bukkit.World;
 
 public final class LocationUtils {
 
@@ -33,6 +36,25 @@ public final class LocationUtils {
         }
         double distance = loc1.distanceSquared(loc2);
         return distance >= (dist * dist);
+    }
+
+    public static Location parseLocation(String string) {
+        if (string == null) {
+            return null;
+        }
+        String[] split = string.split(",");
+        if (split.length < 4) {
+            return null;
+        }
+        String worldName = split[0];
+        String xString = split[1];
+        String yString = split[2];
+        String zString = split[3];
+        World world = Bukkit.getWorld(worldName);
+        if (world == null) {
+            return null;
+        }
+        return new Location(world, NumberUtils.toInt(xString), NumberUtils.toInt(yString), NumberUtils.toInt(zString));
     }
 
 }
