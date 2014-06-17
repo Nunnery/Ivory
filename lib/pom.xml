@@ -115,6 +115,13 @@
 			<type>jar</type>
 			<optional>true</optional>
 		</dependency>
+        <dependency>
+            <groupId>net.nunnerycode.bukkit</groupId>
+            <artifactId>ivory-config</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <type>jar</type>
+            <optional>true</optional>
+        </dependency>
 		<dependency>
 			<groupId>net.nunnerycode.bukkit</groupId>
 			<artifactId>ivory-v1_7_R3</artifactId>
@@ -206,12 +213,7 @@
 								</relocation>
 								<relocation>
 									<pattern>net.gravitydevelopment.updater</pattern>
-									<shadedPattern>net.gravitydevelopment.updater.ivory
-									</shadedPattern>
-								</relocation>
-								<relocation>
-									<pattern>org.google.gson</pattern>
-									<shadedPattern>org.google.gson.ivory</shadedPattern>
+									<shadedPattern>net.gravitydevelopment.updater.ivory</shadedPattern>
 								</relocation>
 							</relocations>
 						</configuration>
