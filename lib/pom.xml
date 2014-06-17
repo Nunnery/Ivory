@@ -195,8 +195,6 @@
 							<artifactSet>
 								<includes>
 									<include>net.nunnerycode.bukkit:ivory-*</include>
-									<include>com.google.code.gson:gson</include>
-									<include>com.dumptruckman.minecraft:JsonConfiguration</include>
 									<include>org.mcstats.bukkit:metrics</include>
 									<include>net.gravitydevelopment.updater:updater</include>
 									<include>net.nunnerycode.java.libraries:Cannonball</include>
