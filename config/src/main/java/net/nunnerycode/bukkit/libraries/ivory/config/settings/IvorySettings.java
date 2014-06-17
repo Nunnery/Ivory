@@ -1,4 +1,4 @@
-package net.nunnerycode.bukkit.libraries.ivory.settings;
+package net.nunnerycode.bukkit.libraries.ivory.config.settings;
 
 import net.nunnerycode.bukkit.libraries.ivory.config.IvoryJsonConfiguration;
 import net.nunnerycode.bukkit.libraries.ivory.config.IvoryYamlConfiguration;
