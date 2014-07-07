@@ -79,6 +79,10 @@
 			<id>fanciful-mvn-repo</id>
 			<url>https://raw.github.com/mkremins/fanciful/mvn-repo/</url>
 		</repository>
+        <repository>
+            <id>stealthyone-repo</id>
+            <url>http://repo.stealthyone.com/content/groups/public</url>
+        </repository>
 	</repositories>
 
 	<properties>
