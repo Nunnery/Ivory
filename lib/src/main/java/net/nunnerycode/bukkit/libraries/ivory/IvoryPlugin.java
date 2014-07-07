@@ -1,7 +1,6 @@
 package net.nunnerycode.bukkit.libraries.ivory;
 
-import net.gravitydevelopment.updater.Updater;
-import net.nunnerycode.bukkit.libraries.ivory.query.CurseForgeQuery;
+import com.bionicrm.litedater.LiteDater;
 import net.nunnerycode.java.libraries.cannonball.DebugPrinter;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.mcstats.Metrics;
@@ -14,8 +13,8 @@ public abstract class IvoryPlugin extends JavaPlugin {
     private boolean useMetrics;
     private boolean useUpdater;
     private Metrics metrics;
-    private Updater updater;
     private DebugPrinter debugPrinter;
+    private String debugFileName = "debug.log";
 
     public Metrics getMetrics() {
         return metrics;
@@ -29,7 +28,9 @@ public abstract class IvoryPlugin extends JavaPlugin {
 
     @Override
     public final void onEnable() {
-        debugPrinter = new DebugPrinter(getDataFolder().getPath(), "debug.log");
+        preEnable();
+        debugPrinter = new DebugPrinter(getDataFolder().getPath(), debugFileName);
+        debug(Level.INFO, "Enabling " + getDescription().getName() + " v" + getDescription().getVersion());
         enable();
         if (isUseMetrics()) {
             try {
@@ -40,19 +41,17 @@ public abstract class IvoryPlugin extends JavaPlugin {
             }
         }
         if (isUseUpdater()) {
-            CurseForgeQuery.BukkitProject
-                    project =
-                    new CurseForgeQuery().query(getDescription().getName());
-            if (project != null) {
-                updater =
-                        new Updater(this, (int) project.getId(), getFile(), Updater.UpdateType.DEFAULT, true);
-            }
+            new LiteDater(this, true).performUpdateCheck();
         }
+        postEnable();
     }
 
     @Override
     public final void onDisable() {
+        preDisable();
+        debug(Level.INFO, "Disabling " + getDescription().getName() + " v" + getDescription().getVersion());
         disable();
+        postDisable();
     }
 
     public final boolean isUseMetrics() {
@@ -71,15 +70,28 @@ public abstract class IvoryPlugin extends JavaPlugin {
         this.useUpdater = useUpdater;
     }
 
+    public abstract void preEnable();
+
     public abstract void enable();
+
+    public abstract void postEnable();
+
+    public abstract void preDisable();
 
     public abstract void disable();
 
-    public Updater getUpdater() {
-        return updater;
-    }
+    public abstract void postDisable();
 
     public DebugPrinter getDebugPrinter() {
         return debugPrinter;
     }
+
+    public String getDebugFileName() {
+        return debugFileName;
+    }
+
+    public void setDebugFileName(String debugFileName) {
+        this.debugFileName = debugFileName;
+    }
+
 }
