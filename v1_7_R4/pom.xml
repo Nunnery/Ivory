@@ -10,7 +10,7 @@
         <version>parent</version>
     </parent>
 
-    <artifactId>v1_7_R4</artifactId>
+    <artifactId>ivory-v1_7_R4</artifactId>
     <version>v1_7_R4</version>
     <packaging>jar</packaging>
 
