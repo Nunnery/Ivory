@@ -14,6 +14,8 @@ public final class ProjectileWrapperUtils {
 
     static {
         projectileWrapperMap = new HashMap<>();
+        projectileWrapperMap.put("org.bukkit.craftbukkit.v1_7_R4",
+                new org.nunnerycode.bukkit.ivory.v_1_7_R4.ProjectileWrapper());
         projectileWrapperMap.put("org.bukkit.craftbukkit.v1_7_R3",
                 new org.nunnerycode.bukkit.ivory.v_1_7_R3.ProjectileWrapper());
         projectileWrapperMap.put("org.bukkit.craftbukkit.v1_7_R2",
@@ -51,7 +53,7 @@ public final class ProjectileWrapperUtils {
         String pkg = Bukkit.getServer().getClass().getPackage().getName();
         IProjectileWrapper wrapper = projectileWrapperMap.get(pkg);
         if (wrapper == null) {
-            wrapper = projectileWrapperMap.get("org.bukkit.craftbukkit.v1_7_R3");
+            wrapper = projectileWrapperMap.get("org.bukkit.craftbukkit.v1_7_R4");
         }
         return wrapper.getShooter(projectile);
     }
