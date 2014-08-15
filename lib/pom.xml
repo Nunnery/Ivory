@@ -236,27 +236,27 @@
 							<relocations>
 								<relocation>
 									<pattern>org.mcstats</pattern>
-									<shadedPattern>${project.groupId}.${project.artifactId}.shade.metrics</shadedPattern>
+									<shadedPattern>${project.groupId}.ivory.shade.metrics</shadedPattern>
 								</relocation>
 								<relocation>
 									<pattern>net.gravitydevelopment.updater</pattern>
-									<shadedPattern>${project.groupId}.${project.artifactId}.shade.updater</shadedPattern>
+									<shadedPattern>${project.groupId}.ivory.shade.updater</shadedPattern>
 								</relocation>
                                 <relocation>
                                     <pattern>mkremins.fanciful</pattern>
-                                    <shadedPattern>${project.groupId}.${project.artifactId}.shade.fanciful</shadedPattern>
+                                    <shadedPattern>${project.groupId}.ivory.shade.fanciful</shadedPattern>
                                 </relocation>
                                 <relocation>
                                     <pattern>net.amoebaman.util</pattern>
-                                    <shadedPattern>${project.groupId}.${project.artifactId}.shade.amoebamanutil</shadedPattern>
+                                    <shadedPattern>${project.groupId}.ivory.shade.amoebamanutil</shadedPattern>
                                 </relocation>
                                 <relocation>
                                     <pattern>com.stealthyone.mcb</pattern>
-                                    <shadedPattern>${project.groupId}.${project.artifactId}.shade.mcml</shadedPattern>
+                                    <shadedPattern>${project.groupId}.ivory.shade.mcml</shadedPattern>
                                 </relocation>
                                 <relocation>
                                     <pattern>com.bionicrm.litedater</pattern>
-                                    <shadedPattern>${project.groupId}.${project.artifactId}.shade.litedater</shadedPattern>
+                                    <shadedPattern>${project.groupId}.ivory.shade.litedater</shadedPattern>
                                 </relocation>
 							</relocations>
 						</configuration>
