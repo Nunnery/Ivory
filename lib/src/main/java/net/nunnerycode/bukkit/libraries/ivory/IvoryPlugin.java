@@ -10,9 +10,7 @@ import java.util.logging.Level;
 
 public abstract class IvoryPlugin extends JavaPlugin {
 
-    private boolean useMetrics;
     private boolean useUpdater;
-    private Metrics metrics;
     private DebugPrinter debugPrinter;
     private String debugFileName = "debug.log";
 
@@ -32,14 +30,6 @@ public abstract class IvoryPlugin extends JavaPlugin {
         debugPrinter = new DebugPrinter(getDataFolder().getPath(), debugFileName);
         debug(Level.INFO, "Enabling " + getDescription().getName() + " v" + getDescription().getVersion());
         enable();
-        if (isUseMetrics()) {
-            try {
-                metrics = new Metrics(this);
-                metrics.start();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
         if (isUseUpdater()) {
             new LiteDater(this, true).performUpdateCheck();
         }
@@ -52,14 +42,6 @@ public abstract class IvoryPlugin extends JavaPlugin {
         debug(Level.INFO, "Disabling " + getDescription().getName() + " v" + getDescription().getVersion());
         disable();
         postDisable();
-    }
-
-    public final boolean isUseMetrics() {
-        return useMetrics;
-    }
-
-    public final void setUseMetrics(boolean useMetrics) {
-        this.useMetrics = useMetrics;
     }
 
     public final boolean isUseUpdater() {

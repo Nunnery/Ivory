@@ -133,12 +133,6 @@
             <version>v1_7_R4</version>
         </dependency>
 		<dependency>
-			<groupId>org.mcstats.bukkit</groupId>
-			<artifactId>metrics</artifactId>
-			<version>R7</version>
-			<scope>compile</scope>
-		</dependency>
-		<dependency>
 			<groupId>com.dsh105</groupId>
 			<artifactId>HoloAPI</artifactId>
 			<version>1.2.3</version>
@@ -223,7 +217,6 @@
 							<artifactSet>
 								<includes>
 									<include>net.nunnerycode.bukkit:ivory-*</include>
-									<include>org.mcstats.bukkit:metrics</include>
 									<include>net.nunnerycode.java.libraries:Cannonball</include>
                                     <include>mkremins:fanciful</include>
                                     <include>com.stealthyone.mcb:mcml</include>
@@ -234,10 +227,6 @@
 								</excludes>
 							</artifactSet>
 							<relocations>
-								<relocation>
-									<pattern>org.mcstats</pattern>
-									<shadedPattern>${project.groupId}.ivory.shade.metrics</shadedPattern>
-								</relocation>
 								<relocation>
 									<pattern>net.gravitydevelopment.updater</pattern>
 									<shadedPattern>${project.groupId}.ivory.shade.updater</shadedPattern>
